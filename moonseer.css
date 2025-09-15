@@ -1,4 +1,4 @@
-/* ---------- Base Styling ---------- */
+/* ---------- Cosmic Background ---------- */
 body {
     margin: 0;
     padding: 0;
@@ -84,17 +84,17 @@ body::after {
     background: white;
     border-radius: 50%;
     box-shadow: 0 0 10px #fff, 0 0 20px #dda0dd, 0 0 40px #ba55d3;
-    animation: shootingStar 6s linear infinite;
-    animation-delay: 5s;
+    animation: shootingStar 10s linear infinite;
+    animation-delay: 15s;
     z-index: 9999;
 }
 .shooting-star::after {
     content: "";
     position: absolute;
-    top: 0; left: -100px;
-    width: 100px;
+    top: 0; left: -120px;
+    width: 120px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+    background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
 }
 
 /* ---------- Sidebar Styling ---------- */
