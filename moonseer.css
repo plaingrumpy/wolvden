@@ -2,43 +2,59 @@
    🌙 Moonseer Theme — Wolvden Safe Version
    ======================================================= */
 
-/* ---------- Background with Nebula + Independent Twinkling Stars ---------- */
+
+/* ---------- Background: Nebula + layered stars with staggered twinkle ---------- */
 body {
+    /* 3 star layers (small, medium, large) + nebula image */
     background:
-      radial-gradient(circle 1px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,
-      radial-gradient(circle 1.5px, rgba(255,255,255,0.7) 50%, transparent 52%) repeat,
-      radial-gradient(circle 2px, rgba(255,255,255,0.5) 50%, transparent 53%) repeat,
+      radial-gradient(circle 0.6px, rgba(255,255,255,0.95) 40%, transparent 41%) repeat,
+      radial-gradient(circle 1.2px, rgba(255,255,255,0.85) 40%, transparent 41%) repeat,
+      radial-gradient(circle 2.2px, rgba(255,255,255,0.65) 40%, transparent 41%) repeat,
       url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed;
-    background-size: 100px 100px, 200px 200px, 400px 400px, cover;
+
+    /* spacing so stars are sparse and layered */
+    background-size: 120px 120px, 260px 260px, 520px 520px, cover;
+    background-position: 0 0, 30% 10%, 60% 30%, center center;
+    background-repeat: repeat, repeat, repeat, no-repeat;
     background-blend-mode: screen;
     color: #e6e0f0 !important;
     font-family: Georgia, serif !important;
 
-    /* combine multiple animations */
-    animation: starTwinkle1 8s ease-in-out infinite,
-               starTwinkle2 12s ease-in-out infinite,
-               starTwinkle3 20s ease-in-out infinite;
+    /* single combined animation controlling positions & brightness over time */
+    animation: starMotion 28s linear infinite;
 }
 
-/* 🌠 Layered Twinkle Animations */
-@keyframes starTwinkle1 {
-    0%   { filter: brightness(0.9); }
-    50%  { filter: brightness(1.3); }
-    100% { filter: brightness(0.9); }
+/* Staggered movement + micro-brightness changes to simulate twinkling */
+@keyframes starMotion {
+  0%  {
+       background-position: 0    0,   30% 10%,   60% 30%,  center center;
+       filter: brightness(1);
+  }
+ 14%  {
+       background-position: -28px -8px,  35% 14%,  58% 28%,  center center;
+       filter: brightness(1.05);
+  }
+ 28%  {
+       background-position: -56px -16px,  40% 18%,  56% 26%,  center center;
+       filter: brightness(0.95);
+  }
+ 42%  {
+       background-position: -84px -24px,  45% 22%,  54% 24%,  center center;
+       filter: brightness(1.08);
+  }
+ 56%  {
+       background-position: -56px -16px,  40% 18%,  56% 26%,  center center;
+       filter: brightness(0.92);
+  }
+ 70%  {
+       background-position: -28px -8px,  35% 14%,  58% 28%,  center center;
+       filter: brightness(1.02);
+  }
+100%  {
+       background-position: 0    0,   30% 10%,   60% 30%,  center center;
+       filter: brightness(1);
+  }
 }
-
-@keyframes starTwinkle2 {
-    0%   { filter: contrast(0.9); }
-    50%  { filter: contrast(1.2); }
-    100% { filter: contrast(0.9); }
-}
-
-@keyframes starTwinkle3 {
-    0%   { opacity: 1; }
-    50%  { opacity: 0.85; }
-    100% { opacity: 1; }
-}
-
 
 /* ---------- Typography ---------- */
 a {
@@ -109,6 +125,7 @@ aside.sidebar h3, .sidebar h3, #sidebar h3, .col-lg-3 h3 {
     box-shadow: 0 0 10px rgba(138,43,226,0.8);
     transition: width 0.5s ease;
 }
+
 
 
 
