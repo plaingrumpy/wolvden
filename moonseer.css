@@ -1,0 +1,36 @@
+/* moonseer.css — Moon Seer Theme Overrides */
+
+/* Main content wrappers (if needed) */
+/* You may already have these */
+body, .profile-content, .content {
+    background-color: #000000 !important;
+    color: #e6e0f0 !important;
+}
+
+/* Sidebar container */
+aside.sidebar, .sidebar, #sidebar, .col-lg-3.order-lg-1, .col-lg-3 {
+    background-color: rgba(30,10,45,0.85) !important;
+    border: 2px solid #6a4c93 !important;
+    box-shadow: 0 0 20px rgba(138,43,226,0.5) !important;
+}
+
+/* Sidebar links & general text */
+aside.sidebar a, .sidebar a, #sidebar a, .col-lg-3 a {
+    color: #e6e6fa !important;
+}
+
+/* Sidebar headers (like “Member Information”, etc.) */
+aside.sidebar h2, .sidebar h2, #sidebar h2, .col-lg-3 h2,
+aside.sidebar h3, .sidebar h3, #sidebar h3, .col-lg-3 h3 {
+    color: #dda0dd !important;
+    border-bottom: 2px solid #ba55d3 !important;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Buttons / boxed items inside sidebar */
+aside.sidebar .btn, .sidebar .btn, .col-lg-3 .btn {
+    background-color: rgba(106,76,147,0.7) !important;
+    border: 1px solid #ba55d3 !important;
+    color: #e6e6fa !important;
+}
