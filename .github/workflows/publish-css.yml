@@ -30,4 +30,3 @@ jobs:
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: publish moonseer.css to docs"
             git push origin HEAD:main
           fi
-add workflow to auto-publish css
