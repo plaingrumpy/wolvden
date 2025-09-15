@@ -1,36 +1,65 @@
-/* moonseer.css — Moon Seer Theme Overrides */
+/* --- Moon Seer Custom Styling --- */
 
-/* Main content wrappers (if needed) */
-/* You may already have these */
-body, .profile-content, .content {
-    background-color: #000000 !important;
+/* 🌌 Starry Background */
+body {
+    background: #000000 url("https://i.imgur.com/J4pQd0R.png") repeat;
+    background-attachment: fixed;
+    color: #e6e0f0 !important;
+    font-family: Georgia, serif;
+}
+
+/* ✨ Main content wrappers */
+.profile-content, .content {
+    background-color: transparent !important;
     color: #e6e0f0 !important;
 }
 
-/* Sidebar container */
+/* 🌙 Sidebar container */
 aside.sidebar, .sidebar, #sidebar, .col-lg-3.order-lg-1, .col-lg-3 {
     background-color: rgba(30,10,45,0.85) !important;
     border: 2px solid #6a4c93 !important;
     box-shadow: 0 0 20px rgba(138,43,226,0.5) !important;
 }
 
-/* Sidebar links & general text */
+/* 🌟 Sidebar links */
 aside.sidebar a, .sidebar a, #sidebar a, .col-lg-3 a {
     color: #e6e6fa !important;
+    transition: all 0.3s ease;
 }
 
-/* Sidebar headers (like “Member Information”, etc.) */
+/* 🌟 Sidebar links hover */
+#sidebar a:hover, .col-lg-3 a:hover {
+    color: #dda0dd !important;
+    text-shadow: 0 0 6px rgba(221,160,221,0.8), 0 0 12px rgba(138,43,226,0.6);
+}
+
+/* 💜 Sidebar headers */
 aside.sidebar h2, .sidebar h2, #sidebar h2, .col-lg-3 h2,
 aside.sidebar h3, .sidebar h3, #sidebar h3, .col-lg-3 h3 {
     color: #dda0dd !important;
     border-bottom: 2px solid #ba55d3 !important;
     padding-bottom: 5px;
     margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(221,160,221,0.6), 0 0 12px rgba(138,43,226,0.5);
 }
 
-/* Buttons / boxed items inside sidebar */
-aside.sidebar .btn, .sidebar .btn, .col-lg-3 .btn {
+/* 💎 Buttons */
+.btn {
     background-color: rgba(106,76,147,0.7) !important;
     border: 1px solid #ba55d3 !important;
     color: #e6e6fa !important;
+    transition: all 0.3s ease;
 }
+
+.btn:hover {
+    background-color: rgba(138,43,226,0.9) !important;
+    box-shadow: 0 0 12px rgba(138,43,226,0.8);
+    transform: scale(1.05);
+}
+
+/* 🌙 Section headings */
+h2, h3 {
+    text-shadow: 0 0 8px rgba(221,160,221,0.6), 0 0 12px rgba(138,43,226,0.5);
+}
+
+
