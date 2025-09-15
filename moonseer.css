@@ -1,38 +1,63 @@
-/* --- Moon Seer Full Reskin --- */
-/* 🌌 Starry Background */
+/* =======================================================
+   🌙 Moonseer Theme — Full Wolvden CSS Overhaul
+   ======================================================= */
+
+/* ---------- Background ---------- */
 html {
     background: #000000 url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed;
     background-size: cover;
+    scroll-behavior: smooth;
 }
 
-/* ✨ Twinkling + Drifting Stars Overlay */
+/* ✨ Twinkling + Drifting Stars Overlay (pure CSS, no external PNG) */
 html::before {
     content: "";
     position: fixed;
-    top: 0; left: 0;
-    width: 200%; height: 200%;
-    background: url("https://i.imgur.com/WN6YxNB.png") repeat;
-    animation: drift 120s linear infinite, twinkle 12s ease-in-out infinite;
-    opacity: 0.5;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
     pointer-events: none;
-    z-index: 9999; /* force above bg */
+    z-index: 0;
+    opacity: 0.55;
+    background-image:
+      radial-gradient(circle 1px, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 51%),
+      radial-gradient(circle 1.2px, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 52%),
+      radial-gradient(circle 0.8px, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 51%);
+    background-size: 6px 6px, 14px 14px, 28px 28px;
+    background-position: 0 0, 50% 10%, 20% 60%;
+    mix-blend-mode: screen;
+    animation: drift 140s linear infinite, twinkle 12s ease-in-out infinite;
+    filter: saturate(1.05) brightness(1.05);
 }
 
-/* 🌠 Twinkle Animation */
+/* ensure content sits above overlay */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Twinkle pulse */
 @keyframes twinkle {
-    0%   { opacity: 0.3; }
-    50%  { opacity: 0.7; }
-    100% { opacity: 0.3; }
+    0%   { opacity: 0.45; filter: blur(0px); }
+    25%  { opacity: 0.65; filter: blur(0.2px); }
+    50%  { opacity: 0.35; filter: blur(0.6px); }
+    75%  { opacity: 0.55; filter: blur(0.2px); }
+    100% { opacity: 0.45; filter: blur(0px); }
 }
 
-/* 🌌 Drift Animation */
+/* Drift motion */
 @keyframes drift {
-    0%   { transform: translate(0, 0); }
-    50%  { transform: translate(-5%, -5%); }
-    100% { transform: translate(0, 0); }
+    0%   { transform: translate(0px, 0px) scale(1); }
+    50%  { transform: translate(-6%, -4%) scale(1.02); }
+    100% { transform: translate(0px, 0px) scale(1); }
 }
 
-/* 🟣 General Links */
+/* ---------- Typography ---------- */
+body {
+    color: #e6e0f0 !important;
+    font-family: Georgia, serif !important;
+}
 a {
     color: #ba55d3 !important;
     transition: 0.3s ease;
@@ -41,49 +66,44 @@ a:hover {
     color: #dda0dd !important;
     text-shadow: 0 0 8px rgba(186,85,211,0.8);
 }
-
-/* 🌙 Headers */
 h1, h2, h3, h4 {
     color: #dda0dd !important;
     text-shadow: 0 0 12px rgba(221,160,221,0.8), 0 0 20px rgba(138,43,226,0.7);
 }
 
-/* ✨ Panels (content boxes) */
-.card, .content, .profile-content, .table {
+/* ---------- Panels / Cards ---------- */
+.card, .content, .profile-content, .table, .wolf, .wolf-card {
     background-color: rgba(30,10,45,0.7) !important;
     border: 1px solid #6a4c93 !important;
     box-shadow: 0 0 15px rgba(138,43,226,0.4);
     color: #e6e0f0 !important;
 }
 
-/* 🌟 Sidebar (already glowing) */
+/* ---------- Sidebar ---------- */
 aside.sidebar, .sidebar, #sidebar, .col-lg-3.order-lg-1, .col-lg-3 {
     background-color: rgba(30,10,45,0.85) !important;
     border: 2px solid #6a4c93 !important;
     box-shadow: 0 0 20px rgba(138,43,226,0.6), 0 0 40px rgba(106,76,147,0.4) !important;
     animation: pulseGlow 6s infinite alternate;
 }
-
-/* 🔋 Status Bars (HP, Hunger, Energy, EXP, Mood) */
-.progress {
-    background-color: rgba(40,20,60,0.6) !important;
-    border: 1px solid #6a4c93 !important;
-    box-shadow: inset 0 0 6px rgba(138,43,226,0.5);
+aside.sidebar a, .sidebar a, #sidebar a, .col-lg-3 a {
+    color: #e6e6fa !important;
+    transition: all 0.3s ease;
 }
-.progress-bar {
-    background: linear-gradient(90deg, #8a2be2, #dda0dd) !important;
-    box-shadow: 0 0 10px rgba(138,43,226,0.8);
-    transition: width 0.5s ease;
+#sidebar a:hover, .col-lg-3 a:hover {
+    color: #dda0dd !important;
+    text-shadow: 0 0 6px rgba(221,160,221,0.8), 0 0 12px rgba(138,43,226,0.6);
 }
-
-/* 🐺 Wolf Cards */
-.wolf, .wolf-card {
-    background-color: rgba(30,10,45,0.7) !important;
-    border: 1px solid #6a4c93 !important;
-    box-shadow: 0 0 10px rgba(138,43,226,0.5);
+aside.sidebar h2, .sidebar h2, #sidebar h2, .col-lg-3 h2,
+aside.sidebar h3, .sidebar h3, #sidebar h3, .col-lg-3 h3 {
+    color: #dda0dd !important;
+    border-bottom: 2px solid #ba55d3 !important;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(221,160,221,0.6), 0 0 12px rgba(138,43,226,0.5);
 }
 
-/* 💎 Buttons */
+/* ---------- Buttons ---------- */
 .btn {
     background-color: rgba(106,76,147,0.7) !important;
     border: 1px solid #ba55d3 !important;
@@ -96,12 +116,20 @@ aside.sidebar, .sidebar, #sidebar, .col-lg-3.order-lg-1, .col-lg-3 {
     transform: scale(1.05);
 }
 
-/* 🔮 Animations */
+/* ---------- Status Bars (HP, Hunger, Energy, EXP, Mood) ---------- */
+.progress {
+    background-color: rgba(40,20,60,0.6) !important;
+    border: 1px solid #6a4c93 !important;
+    box-shadow: inset 0 0 6px rgba(138,43,226,0.5);
+}
+.progress-bar {
+    background: linear-gradient(90deg, #8a2be2, #dda0dd) !important;
+    box-shadow: 0 0 10px rgba(138,43,226,0.8);
+    transition: width 0.5s ease;
+}
+
+/* ---------- Animations ---------- */
 @keyframes pulseGlow {
     0% { box-shadow: 0 0 12px rgba(138,43,226,0.4), 0 0 24px rgba(106,76,147,0.3); }
     100% { box-shadow: 0 0 20px rgba(138,43,226,0.8), 0 0 40px rgba(186,85,211,0.6); }
 }
-
-
-
-
