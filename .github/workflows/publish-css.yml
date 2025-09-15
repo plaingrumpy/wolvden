@@ -1,0 +1,33 @@
+name: Publish moonseer.css to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'moonseer.css'
+      - '.github/workflows/publish-css.yml'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Ensure docs folder exists & copy CSS
+        run: |
+          mkdir -p docs
+          cp -f moonseer.css docs/moonseer.css
+          git add docs/moonseer.css
+
+      - name: Commit & push if changed
+        run: |
+          if git diff --staged --quiet; then
+            echo "No changes to docs/moonseer.css — nothing to commit."
+          else
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: publish moonseer.css to docs"
+            git push origin HEAD:main
+          fi
+add workflow to auto-publish css
