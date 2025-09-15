@@ -8,7 +8,7 @@ body {
       radial-gradient(circle 1px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,
       radial-gradient(circle 1.5px, rgba(255,255,255,0.7) 50%, transparent 52%) repeat,
       radial-gradient(circle 2px, rgba(255,255,255,0.5) 50%, transparent 53%) repeat,
-      url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed;
+      url("https://i.imgur.com/QqA4MRT.png") no-repeat center center fixed;
     /* increase spacing so stars aren’t packed together */
     background-size: 100px 100px, 200px 200px, 400px 400px, cover;
     background-blend-mode: screen;
@@ -86,4 +86,5 @@ aside.sidebar h3, .sidebar h3, #sidebar h3, .col-lg-3 h3 {
     box-shadow: 0 0 10px rgba(138,43,226,0.8);
     transition: width 0.5s ease;
 }
+
 
