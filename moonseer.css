@@ -1,21 +1,38 @@
-/* --- Moon Seer Custom Styling (Full Mystic Glow) --- */
+/* --- Moon Seer Full Reskin --- */
 
 /* 🌌 Starry Background */
 body {
-    background: #000000 url("https://i.imgur.com/J4pQd0R.png") repeat;
+    background: #000000 url("https://i.imgur.com/MMpl1zZ.jpeg") repeat;
     background-attachment: fixed;
     color: #e6e0f0 !important;
     font-family: Georgia, serif;
 }
 
-/* ✨ Main content wrappers */
-.profile-content, .content {
-    background-color: transparent !important;
-    color: #e6e0f0 !important;
-    animation: fadeIn 2s ease-in;
+/* 🟣 General Links */
+a {
+    color: #ba55d3 !important;
+    transition: 0.3s ease;
+}
+a:hover {
+    color: #dda0dd !important;
+    text-shadow: 0 0 8px rgba(186,85,211,0.8);
 }
 
-/* 🌙 Sidebar container */
+/* 🌙 Headers */
+h1, h2, h3, h4 {
+    color: #dda0dd !important;
+    text-shadow: 0 0 12px rgba(221,160,221,0.8), 0 0 20px rgba(138,43,226,0.7);
+}
+
+/* ✨ Panels (content boxes) */
+.card, .content, .profile-content, .table {
+    background-color: rgba(30,10,45,0.7) !important;
+    border: 1px solid #6a4c93 !important;
+    box-shadow: 0 0 15px rgba(138,43,226,0.4);
+    color: #e6e0f0 !important;
+}
+
+/* 🌟 Sidebar (already glowing) */
 aside.sidebar, .sidebar, #sidebar, .col-lg-3.order-lg-1, .col-lg-3 {
     background-color: rgba(30,10,45,0.85) !important;
     border: 2px solid #6a4c93 !important;
@@ -23,28 +40,23 @@ aside.sidebar, .sidebar, #sidebar, .col-lg-3.order-lg-1, .col-lg-3 {
     animation: pulseGlow 6s infinite alternate;
 }
 
-/* 🌟 Sidebar links */
-aside.sidebar a, .sidebar a, #sidebar a, .col-lg-3 a {
-    color: #e6e6fa !important;
-    transition: all 0.4s ease;
+/* 🔋 Status Bars (HP, Hunger, Energy, EXP, Mood) */
+.progress {
+    background-color: rgba(40,20,60,0.6) !important;
+    border: 1px solid #6a4c93 !important;
+    box-shadow: inset 0 0 6px rgba(138,43,226,0.5);
+}
+.progress-bar {
+    background: linear-gradient(90deg, #8a2be2, #dda0dd) !important;
+    box-shadow: 0 0 10px rgba(138,43,226,0.8);
+    transition: width 0.5s ease;
 }
 
-/* 🌟 Sidebar links hover */
-#sidebar a:hover, .col-lg-3 a:hover {
-    color: #dda0dd !important;
-    text-shadow: 0 0 8px rgba(221,160,221,0.9), 0 0 16px rgba(138,43,226,0.8);
-    transform: scale(1.08);
-}
-
-/* 💜 Sidebar headers */
-aside.sidebar h2, .sidebar h2, #sidebar h2, .col-lg-3 h2,
-aside.sidebar h3, .sidebar h3, #sidebar h3, .col-lg-3 h3 {
-    color: #dda0dd !important;
-    border-bottom: 2px solid #ba55d3 !important;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    text-shadow: 0 0 12px rgba(221,160,221,0.8), 0 0 20px rgba(138,43,226,0.7);
-    animation: shimmer 5s infinite linear;
+/* 🐺 Wolf Cards */
+.wolf, .wolf-card {
+    background-color: rgba(30,10,45,0.7) !important;
+    border: 1px solid #6a4c93 !important;
+    box-shadow: 0 0 10px rgba(138,43,226,0.5);
 }
 
 /* 💎 Buttons */
@@ -53,34 +65,17 @@ aside.sidebar h3, .sidebar h3, #sidebar h3, .col-lg-3 h3 {
     border: 1px solid #ba55d3 !important;
     color: #e6e6fa !important;
     transition: all 0.3s ease;
-    animation: pulseGlow 8s infinite alternate;
 }
-
 .btn:hover {
     background-color: rgba(138,43,226,0.95) !important;
     box-shadow: 0 0 16px rgba(138,43,226,0.9), 0 0 32px rgba(186,85,211,0.8);
-    transform: scale(1.1);
-}
-
-/* 🌙 Section headings */
-h2, h3 {
-    text-shadow: 0 0 12px rgba(221,160,221,0.8), 0 0 20px rgba(138,43,226,0.7);
-    animation: shimmer 7s infinite linear;
+    transform: scale(1.05);
 }
 
 /* 🔮 Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes pulseGlow {
     0% { box-shadow: 0 0 12px rgba(138,43,226,0.4), 0 0 24px rgba(106,76,147,0.3); }
     100% { box-shadow: 0 0 20px rgba(138,43,226,0.8), 0 0 40px rgba(186,85,211,0.6); }
 }
 
-@keyframes shimmer {
-    0% { text-shadow: 0 0 6px rgba(221,160,221,0.6), 0 0 10px rgba(138,43,226,0.4); }
-    50% { text-shadow: 0 0 16px rgba(221,160,221,0.9), 0 0 28px rgba(138,43,226,0.8); }
-    100% { text-shadow: 0 0 6px rgba(221,160,221,0.6), 0 0 10px rgba(138,43,226,0.4); }
-}
+
