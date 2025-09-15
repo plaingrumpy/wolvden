@@ -2,18 +2,41 @@
    🌙 Moonseer Theme — Wolvden Safe Version
    ======================================================= */
 
-/* ---------- Background with Nebula + Spaced Stars ---------- */
+/* ---------- Background with Nebula + Independent Twinkling Stars ---------- */
 body {
     background:
       radial-gradient(circle 1px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,
       radial-gradient(circle 1.5px, rgba(255,255,255,0.7) 50%, transparent 52%) repeat,
       radial-gradient(circle 2px, rgba(255,255,255,0.5) 50%, transparent 53%) repeat,
-      url("https://i.imgur.com/QqA4MRT.png") no-repeat center center fixed;
-    /* increase spacing so stars aren’t packed together */
+      url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed;
     background-size: 100px 100px, 200px 200px, 400px 400px, cover;
     background-blend-mode: screen;
     color: #e6e0f0 !important;
     font-family: Georgia, serif !important;
+
+    /* combine multiple animations */
+    animation: starTwinkle1 8s ease-in-out infinite,
+               starTwinkle2 12s ease-in-out infinite,
+               starTwinkle3 20s ease-in-out infinite;
+}
+
+/* 🌠 Layered Twinkle Animations */
+@keyframes starTwinkle1 {
+    0%   { filter: brightness(0.9); }
+    50%  { filter: brightness(1.3); }
+    100% { filter: brightness(0.9); }
+}
+
+@keyframes starTwinkle2 {
+    0%   { filter: contrast(0.9); }
+    50%  { filter: contrast(1.2); }
+    100% { filter: contrast(0.9); }
+}
+
+@keyframes starTwinkle3 {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.85; }
+    100% { opacity: 1; }
 }
 
 
@@ -86,5 +109,6 @@ aside.sidebar h3, .sidebar h3, #sidebar h3, .col-lg-3 h3 {
     box-shadow: 0 0 10px rgba(138,43,226,0.8);
     transition: width 0.5s ease;
 }
+
 
 
