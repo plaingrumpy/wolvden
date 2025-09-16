@@ -211,3 +211,47 @@ h1, h2, h3, h4, h5 {
   color: #ffdbff !important; /* bright lavender */
   text-shadow: 0 0 6px rgba(138,43,226,0.6);
 }
+/* --- Kill gray background everywhere --- */
+body,
+html,
+#main,
+.container,
+.content,
+.wrapper,
+.page,
+#footer,
+.navbar,
+.breadcrumb {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* --- Purple solid boxes --- */
+.box,
+.card,
+.container,
+.content,
+#main {
+  background: #1a0a2a !important; /* deep purple solid */
+  border: 1px solid #6a4c93 !important;
+  box-shadow: inset 0 0 15px rgba(138, 43, 226, 0.5) !important;
+  color: #f0eaff !important;
+}
+
+/* --- Sidebar purple --- */
+#sidebar,
+#sidebar .card {
+  background: #1a0a2a !important;
+  border: 1px solid #6a4c93 !important;
+  box-shadow: 0 0 15px rgba(138,43,226,0.6) !important;
+  color: #f0eaff !important;
+}
+
+/* --- Headings for visibility --- */
+h1, h2, h3, h4, h5 {
+  color: #ffdbff !important;
+  text-shadow: 0 0 6px rgba(138,43,226,0.6);
+}
+
