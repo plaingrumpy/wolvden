@@ -169,6 +169,35 @@ body.theme_light {
   color: #ffffff !important;
   text-decoration: underline;
 }
+/* Profile username and ID */
+#fraProfileHTML ~ h1,
+#fraProfileHTML ~ h1 a {
+  color: #d8b4f8 !important; /* light purple for readability */
+  text-shadow: 1px 1px 3px #000 !important; /* subtle glow for contrast */
+}
+
+/* Navigation links under the name */
+#fraProfileHTML ~ a {
+  color: #e6e6fa !important; /* lavender */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000 !important;
+}
+
+/* The profile button */
+.nav-tabs .nav-item .nav-link.active,
+.nav-tabs .nav-item .nav-link {
+  background-color: #2a0d3a !important; /* deep purple background */
+  color: #ffffff !important; /* white text */
+  border: 1px solid #ba55d3 !important; /* purple border */
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+
+.nav-tabs .nav-item .nav-link:hover {
+  background-color: #4b006e !important; /* brighter purple hover */
+  color: #fff !important;
+}
+
 
 
 
