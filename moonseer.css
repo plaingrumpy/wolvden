@@ -176,3 +176,32 @@ footer, #footer {
 .navbar a:hover, .breadcrumb a:hover, .card a:hover {
   color: #ffffff !important;
 }
+/* Darken cosmic background for better text contrast */
+body::before {
+  background-color: rgba(10, 0, 20, 0.6); /* deep violet overlay */
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+/* Strengthen box opacity */
+.box,
+.card,
+.content,
+.container {
+  background: rgba(25, 5, 40, 0.92) !important;
+  color: #f0eaff !important; /* brighter lavender text */
+}
+
+/* Headings stand out more */
+h1, h2, h3, h4, h5 {
+  color: #ffdbff !important; /* very light pinkish lavender */
+  text-shadow: 0 0 6px rgba(138,43,226,0.6);
+}
+
+/* Sidebar readability */
+#sidebar,
+#sidebar .card {
+  background: rgba(20, 5, 30, 0.95) !important;
+  color: #f0eaff !important;
+}
+
