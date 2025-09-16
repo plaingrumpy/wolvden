@@ -316,14 +316,15 @@ body.theme_light {
 .star:nth-child(2) { top: 100px; left: 200px; animation-delay: 1s; }
 .star:nth-child(3) { top: 180px; left: 400px; animation-delay: 2s; }
 
-/* Base shooting star style */
+/* Base shooting star */
 .shooting {
   position: absolute;
-  width: 180px;
+  width: 200px; /* trail length */
   height: 4px;
   display: flex;
   align-items: center;
   opacity: 0.9;
+  overflow: visible;
 }
 
 /* Star head */
@@ -333,7 +334,7 @@ body.theme_light {
   height: 6px;
   border-radius: 50%;
   background: white;
-  box-shadow: 0 0 12px 5px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.8);
   flex-shrink: 0;
   margin-right: 6px;
 }
@@ -343,22 +344,31 @@ body.theme_light {
   content: "";
   flex: 1;
   height: 2px;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
+  background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
   border-radius: 2px;
 }
 
-/* Variants for speed, angle, and size */
-.shooting.fast   { animation: shoot 3s linear infinite; }
-.shooting.medium { animation: shoot 5s linear infinite; }
-.shooting.slow   { animation: shoot 8s linear infinite; }
-
-.shooting.small::before { width: 4px; height: 4px; box-shadow: 0 0 8px 3px rgba(255,255,255,0.7); }
-.shooting.large::before { width: 8px; height: 8px; box-shadow: 0 0 14px 6px rgba(255,255,255,0.9); }
-
-/* Keyframes */
-@keyframes shoot {
-  0%   { transform: translateX(0) translateY(0) rotate(-25deg); opacity: 0; }
-  10%  { opacity: 1; }
-  60%  { transform: translateX(-800px) translateY(300px) rotate(-25deg); opacity: 1; }
-  100% { transform: translateX(-1200px) translateY(500px) rotate(-25deg); opacity: 0; }
+/* Movement across the screen */
+@keyframes shoot-left {
+  0%   { transform: translateX(100vw); opacity: 0; }
+  5%   { opacity: 1; }
+  50%  { opacity: 1; }
+  100% { transform: translateX(-120%); opacity: 0; }
 }
+
+@keyframes shoot-right {
+  0%   { transform: translateX(-120%); opacity: 0; }
+  5%   { opacity: 1; }
+  50%  { opacity: 1; }
+  100% { transform: translateX(100vw); opacity: 0; }
+}
+
+/* Speed variants */
+.shooting.fast   { animation: shoot-left 4s linear infinite; }
+.shooting.medium { animation: shoot-left 7s linear infinite; }
+.shooting.slow   { animation: shoot-left 12s linear infinite; }
+
+/* Right-to-left switch */
+.shooting.reverse.fast   { animation: shoot-right 4s linear infinite; }
+.shooting.reverse.medium { animation: shoot-right 7s linear infinite; }
+.shooting.reverse.slow   { animation: shoot-right 12s linear infinite; }
