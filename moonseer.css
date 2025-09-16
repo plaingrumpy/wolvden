@@ -327,7 +327,7 @@ body.theme_light {
   z-index: 5;
 }
 
-/* Head */
+/* Star head */
 .shooting::before {
   content: "";
   width: 6px;
@@ -348,7 +348,7 @@ body.theme_light {
   border-radius: 2px;
 }
 
-/* Diagonal rightward streak */
+/* Left → Right diagonal streak */
 @keyframes shoot-right {
   0%   { transform: translate(-20vw, -30vh); opacity: 0; }
   10%  { opacity: 1; }
@@ -360,5 +360,3 @@ body.theme_light {
 .shooting.fast   { animation: shoot-right 4s linear infinite; }
 .shooting.medium { animation: shoot-right 7s linear infinite; }
 .shooting.slow   { animation: shoot-right 12s linear infinite; }
-
-
