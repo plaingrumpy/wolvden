@@ -209,4 +209,20 @@ body[style], html body #main[style], html body .page[style], html body .wrapper[
   all: unset !important;
 }
 
+/* Remove Wolvden's default dark background overlays */
+body, 
+.wrapper, 
+.page, 
+.container, 
+.content, 
+#main, 
+#footer, 
+.navbar, 
+.breadcrumb {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 
