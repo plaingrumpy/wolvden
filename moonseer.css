@@ -1,46 +1,37 @@
 /* ---------- Cosmic Background ---------- */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Georgia, serif !important;
-  color: #e6e0f0 !important;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif !important;
+    color: #e6e0f0 !important;
 
-  background:
-    /* Small stars (bigger now) */
-    radial-gradient(circle 4px, rgba(255,255,255,0.95) 45%, transparent 46%) repeat,
-    /* Medium stars */
-    radial-gradient(circle 8px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,
-    /* Large stars */
-    radial-gradient(circle 14px, rgba(255,255,255,0.8) 55%, transparent 56%) repeat,
-    /* Supernova glow */
-    radial-gradient(circle 22px, rgba(186,85,211,0.4) 30%, transparent 70%) repeat,
-    /* Supernova core */
-    radial-gradient(circle 12px, rgba(255,255,255,1) 45%, transparent 46%) repeat,
-    /* Nebula layers */
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed,
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat top left fixed,
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat bottom right fixed;
+    background:
+      radial-gradient(circle 4px, rgba(255,255,255,0.95) 45%, transparent 46%) repeat,   /* small stars */
+      radial-gradient(circle 8px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,   /* medium stars */
+      radial-gradient(circle 14px, rgba(255,255,255,0.8) 55%, transparent 56%) repeat,  /* large stars */
+      radial-gradient(circle 22px, rgba(186,85,211,0.4) 30%, transparent 70%) repeat,   /* supernova glow */
+      radial-gradient(circle 12px, rgba(255,255,255,1) 45%, transparent 46%) repeat,    /* supernova core */
+      url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed,
+      url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat top left fixed,
+      url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat bottom right fixed;
 
-  background-size:
-    250px 250px,   /* small */
-    500px 500px,   /* medium */
-    900px 900px,   /* large */
-    1600px 1600px, /* glow */
-    1600px 1600px, /* core */
-    cover, cover, cover;
+    background-size: 
+        250px 250px,   /* small stars */
+        500px 500px,   /* medium stars */
+        900px 900px,   /* large stars */
+        1600px 1600px, /* supernova glow */
+        1600px 1600px, /* supernova core */
+        cover, cover, cover;
+    background-position: 
+        0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, 
+        center center, top left, bottom right;
+    background-repeat: repeat, repeat, repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
+    background-blend-mode: screen;
 
-  background-position:
-    0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%,
-    center center, top left, bottom right;
-
-  background-repeat: repeat, repeat, repeat, repeat, repeat,
-    no-repeat, no-repeat, no-repeat;
-
-  background-blend-mode: screen;
-  animation: starMotion 30s linear infinite;
+    animation: starMotion 30s linear infinite;
 }
 
-/* ---------- Star Drift + Twinkle ---------- */
+/* ---------- Starfield drifting + subtle twinkle ---------- */
 @keyframes starMotion {
   0%   { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; filter: brightness(1); }
   25%  { background-position: -80px -40px, 35% 15%, 58% 28%, 78% 48%, 78% 48%, center, top left, bottom right; filter: brightness(1.1); }
@@ -49,46 +40,25 @@ body {
   100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; filter: brightness(1); }
 }
 
-/* ---------- Nebula Drift Layer ---------- */
+/* ---------- Nebula drift ---------- */
 body::after {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center,
-              url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center;
-  background-size: cover, 200%;
-  opacity: 0.25;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  animation: nebulaDrift 180s linear infinite;
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center;
+    background-size: 200%;
+    opacity: 0.25;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    animation: nebulaDrift 180s linear infinite;
 }
-
 @keyframes nebulaDrift {
-  0%   { background-position: 0% 0%, 50% 50%; }
-  50%  { background-position: 10% 5%, 55% 55%; }
-  100% { background-position: 0% 0%, 50% 50%; }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 50% 50%; }
+  100% { background-position: 0% 0%; }
 }
 
-/* ---------- Supernova Pulse ---------- */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(circle 22px, rgba(186,85,211,0.6) 30%, transparent 70%) repeat,
-    radial-gradient(circle 12px, rgba(255,255,255,1) 45%, transparent 46%) repeat;
-  background-size: 1600px 1600px, 1600px 1600px;
-  background-position: 25% 40%, 75% 65%;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  animation: supernovaPulse 10s ease-in-out infinite;
-}
-@keyframes supernovaPulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
-
-/* ---------- Shooting Stars ---------- */
+/* ---------- Shooting Star ---------- */
 @keyframes shootingStar {
   0% { transform: translateX(-10%) translateY(-10%) scale(0.5); opacity: 0; }
   10% { opacity: 1; }
@@ -96,99 +66,82 @@ body::before {
   100% { transform: translateX(200vw) translateY(120vh) scale(0.8); opacity: 0; }
 }
 .shooting-star {
-  position: fixed;
-  top: 10%;
-  left: -10%;
-  width: 4px;
-  height: 4px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #fff, 0 0 20px #dda0dd, 0 0 40px #ba55d3;
-  animation: shootingStar 12s linear infinite;
-  animation-delay: 5s;
-  z-index: 9999;
+    position: fixed;
+    top: 10%;
+    left: -10%;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 0 0 20px #dda0dd, 0 0 40px #ba55d3;
+    animation: shootingStar 10s linear infinite;
+    animation-delay: 15s;
+    z-index: 9999;
 }
 .shooting-star::after {
-  content: "";
-  position: absolute;
-  top: 0; left: -120px;
-  width: 120px;
-  height: 2px;
-  background: linear-gradient(90deg
-/* --- Nuke Wolvden gray completely --- */
-body, html,
-#main,
-.wrapper,
-.page,
-#footer,
-.navbar,
-.breadcrumb,
-.container,
-.content {
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+    content: "";
+    position: absolute;
+    top: 0; left: -120px;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
 }
 
-/* --- Keep boxes + sidebar solid purple --- */
-.box,
-.card,
-#sidebar,
-#sidebar .card {
-  background: #1a0a2a !important; /* deep purple */
-  border: 1px solid #6a4c93 !important;
-  box-shadow: inset 0 0 15px rgba(138, 43, 226, 0.5) !important;
-  color: #f0eaff !important;
+/* ---------- Sidebar Styling ---------- */
+#sidebar, #sidebar .card {
+    background: #1a0a2a !important;
+    border: 1px solid #6a4c93 !important;
+    box-shadow: inset 0 0 12px rgba(138,43,226,0.3) !important;
+    color: #e6e0f0 !important;
+}
+#sidebar a {
+    color: #dda0dd !important;
+}
+#sidebar a:hover {
+    color: #ffffff !important;
 }
 
-/* --- Headings visible --- */
-h1, h2, h3, h4, h5 {
-  color: #ffdbff !important;
-  text-shadow: 0 0 6px rgba(138,43,226,0.6);
+/* ---------- HP/EXP Bar Styling ---------- */
+.bar {
+    background-color: #6a4c93 !important;
+    border: 1px solid #ba55d3 !important;
+    height: 12px !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    position: relative !important;
 }
-/* Remove Wolvden's default gray wrappers */
-#main, 
-.page, 
-.wrapper, 
-.container, 
-.content {
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+.bar-fill {
+    background: linear-gradient(90deg, #dda0dd, #ba55d3, #8a2be2) !important;
+    height: 100% !important;
 }
 
-/* Keep only your styled boxes + sidebar solid */
-.box, 
-.card, 
-#sidebar, 
-#sidebar .card {
-  background: #1a0a2a !important; /* rich deep purple */
-  border: 1px solid #6a4c93 !important;
-  box-shadow: inset 0 0 15px rgba(138, 43, 226, 0.5) !important;
-  color: #f0eaff !important;
+/* ---------- Box Styling ---------- */
+.box, .card {
+    background: #1a0a2a !important;
+    border: 1px solid #6a4c93 !important;
+    box-shadow: inset 0 0 15px rgba(138,43,226,0.5) !important;
+    color: #f0eaff !important;
 }
-/* Kill any semi-transparent overlays */
-.wrapper::before,
-.wrapper::after,
-.page::before,
-.page::after,
-#main::before,
-#main::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  box-shadow: none !important;
-  opacity: 0 !important;
+.box h2 {
+    color: #dda0dd !important;
+    border-bottom: 2px solid #ba55d3 !important;
+    padding-bottom: 4px !important;
 }
 
-/* Make wrapper itself transparent */
-.wrapper, .page, #main {
-  background: none !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
+/* ---------- Kill all gray overlays ---------- */
+body, html, .wrapper, .page, #main, .container, .content, #footer, .navbar, .breadcrumb {
+    background: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
-
-
+.wrapper::before, .wrapper::after,
+.page::before, .page::after,
+#main::before, #main::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
