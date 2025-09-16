@@ -284,6 +284,11 @@ body, html, #main, .wrapper, .page, .container, .content, #footer, .navbar, .bre
   padding-top: 0 !important;
 }
 
+.container .row {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 
 
 
