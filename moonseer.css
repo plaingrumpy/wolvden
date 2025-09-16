@@ -224,5 +224,28 @@ body,
   box-shadow: none !important;
   border: none !important;
 }
+/* Ultra-target background killers */
+body, html, #main, .wrapper, .page, .container, .content, #footer, .navbar, .breadcrumb, #sidebar {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Sidebar panel extra */
+#sidebar .card, #sidebar .card-body {
+  background: transparent !important;
+}
+
+/* Ensure boxes stay visible */
+.box, .card, #sidebar .box, #sidebar .card {
+  position: relative !important;
+  z-index: 9999 !important;
+  background: rgba(20, 5, 35, 0.95) !important;
+  border: 1px solid #6a4c93 !important;
+  color: #f0eaff !important;
+  box-shadow: none !important;
+}
+
 
 
