@@ -6,32 +6,29 @@ body {
     color: #e6e0f0 !important;
 
     background:
-      radial-gradient(circle 4px, rgba(255,255,255,0.95) 45%, transparent 46%) repeat,   /* small stars */
-      radial-gradient(circle 8px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,   /* medium stars */
-      radial-gradient(circle 14px, rgba(255,255,255,0.8) 55%, transparent 56%) repeat,  /* large stars */
-      radial-gradient(circle 22px, rgba(186,85,211,0.4) 30%, transparent 70%) repeat,   /* supernova glow */
-      radial-gradient(circle 12px, rgba(255,255,255,1) 45%, transparent 46%) repeat,    /* supernova core */
-      url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed,
-      url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat top left fixed,
-      url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat bottom right fixed;
+      radial-gradient(circle 4px, rgba(255, 255, 255, 0.95) 45%, transparent 46%) repeat,
+      radial-gradient(circle 8px, rgba(255, 255, 255, 0.9) 50%, transparent 51%) repeat,
+      radial-gradient(circle 14px, rgba(255, 255, 255, 0.8) 55%, transparent 56%) repeat,
+      radial-gradient(circle 22px, rgba(186, 85, 211, 0.4) 30%, transparent 70%) repeat,
+      radial-gradient(circle 12px, rgba(255, 255, 255, 1) 45%, transparent 46%) repeat,
+      url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat center center fixed,
+      url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat top left fixed,
+      url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat bottom right fixed;
 
     background-size: 
-        250px 250px,   /* small stars */
-        500px 500px,   /* medium stars */
-        900px 900px,   /* large stars */
-        1600px 1600px, /* supernova glow */
-        1600px 1600px, /* supernova core */
+        250px 250px,
+        500px 500px,
+        900px 900px,
+        1600px 1600px,
+        1600px 1600px,
         cover, cover, cover;
-    background-position: 
-        0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, 
-        center center, top left, bottom right;
+    background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center center, top left, bottom right;
     background-repeat: repeat, repeat, repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
     background-blend-mode: screen;
-
     animation: starMotion 30s linear infinite;
 }
 
-/* ---------- Starfield drifting + subtle twinkle ---------- */
+/* Starfield drifting + subtle twinkle */
 @keyframes starMotion {
   0%   { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; filter: brightness(1); }
   25%  { background-position: -80px -40px, 35% 15%, 58% 28%, 78% 48%, 78% 48%, center, top left, bottom right; filter: brightness(1.1); }
@@ -40,25 +37,43 @@ body {
   100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; filter: brightness(1); }
 }
 
-/* ---------- Nebula drift ---------- */
+/* Supernova pulse */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(circle 22px, rgba(186,85,211,0.6) 30%, transparent 70%) repeat,
+        radial-gradient(circle 12px, rgba(255,255,255,1) 45%, transparent 46%) repeat;
+    background-size: 1600px 1600px, 1600px 1600px;
+    background-position: 25% 40%, 75% 65%;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    animation: supernovaPulse 10s ease-in-out infinite;
+}
+@keyframes supernovaPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Nebula drift */
 body::after {
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center;
-    background-size: 200%;
+    background: url(https://i.imgur.com/MMpl1zZ.jpeg) repeat center center, url(https://i.imgur.com/MMpl1zZ.jpeg) repeat center center;
+    background-size: cover, 200%;
     opacity: 0.25;
     mix-blend-mode: screen;
     pointer-events: none;
     animation: nebulaDrift 180s linear infinite;
 }
 @keyframes nebulaDrift {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 50% 50%; }
-  100% { background-position: 0% 0%; }
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 200px 400px, -400px -200px; }
 }
 
-/* ---------- Shooting Star ---------- */
+/* Shooting Star */
 @keyframes shootingStar {
   0% { transform: translateX(-10%) translateY(-10%) scale(0.5); opacity: 0; }
   10% { opacity: 1; }
@@ -87,222 +102,49 @@ body::after {
     background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
 }
 
-/* ---------- Sidebar Styling ---------- */
+/* Sidebar */
 #sidebar, #sidebar .card {
-    background: #1a0a2a !important;
-    border: 1px solid #6a4c93 !important;
-    box-shadow: inset 0 0 12px rgba(138,43,226,0.3) !important;
-    color: #e6e0f0 !important;
+  background: transparent !important;
+  border: 1px solid #6a4c93 !important;
+  box-shadow: 0 0 12px rgba(138,43,226,0.5);
+  color: #e6e0f0 !important;
 }
-#sidebar a {
-    color: #dda0dd !important;
-}
-#sidebar a:hover {
-    color: #ffffff !important;
-}
+#sidebar a { color: #dda0dd !important; }
+#sidebar a:hover { color: #ffffff !important; }
 
-/* ---------- HP/EXP Bar Styling ---------- */
+/* HP/EXP Bars */
 .bar {
-    background-color: #6a4c93 !important;
-    border: 1px solid #ba55d3 !important;
-    height: 12px !important;
-    border-radius: 6px !important;
-    overflow: hidden !important;
-    position: relative !important;
+  background-color: #6a4c93 !important;
+  border: 1px solid #ba55d3 !important;
+  height: 12px !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
 }
 .bar-fill {
-    background: linear-gradient(90deg, #dda0dd, #ba55d3, #8a2be2) !important;
-    height: 100% !important;
+  background: linear-gradient(90deg, #dda0dd, #ba55d3, #8a2be2) !important;
+  height: 100% !important;
 }
 
-/* ---------- Box Styling ---------- */
-.box, .card {
-    background: #1a0a2a !important;
-    border: 1px solid #6a4c93 !important;
-    box-shadow: inset 0 0 15px rgba(138,43,226,0.5) !important;
-    color: #f0eaff !important;
-}
-.box h2 {
-    color: #dda0dd !important;
-    border-bottom: 2px solid #ba55d3 !important;
-    padding-bottom: 4px !important;
-}
-
-/* ---------- Kill all gray overlays ---------- */
-body, html, .wrapper, .page, #main, .container, .content, #footer, .navbar, .breadcrumb {
-    background: none !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-.wrapper::before, .wrapper::after,
-.page::before, .page::after,
-#main::before, #main::after {
-    content: none !important;
-    display: none !important;
-    background: none !important;
-    box-shadow: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-}
-/* 🔮 Overwrite Wolvden's main page backgrounds */
-html body #main,
-html body .page,
-html body .wrapper,
-html body .container,
-html body .content {
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Kill any default dark-gray background classes */
-html body #main[style],
-html body .page[style],
-html body .wrapper[style] {
-  background: none !important;
-  background-color: transparent !important;
-}
-
-/* Ensure only boxes + sidebar are visible */
-html body .box,
-html body .card,
-html body #sidebar,
-html body #sidebar .card {
-  background: #1a0a2a !important;
-  border: 1px solid #6a4c93 !important;
-  box-shadow: inset 0 0 15px rgba(138,43,226,0.5) !important;
-  color: #f0eaff !important;
-}
-/* 🚫 Remove Wolvden’s default body background */
-body {
-  background: none !important;
-  background-color: transparent !important;
-}
-
-/* 🚫 Remove Wolvden's specific dark background image */
-body[style],
-html body {
-  background-image: none !important;
-  background-color: transparent !important;
-}
-/* ----------------- Force cosmic layer above default site bg ----------------- */
-
-/* 1) Remove any default body background so it can't cover our cosmic layer */
-html, body {
+/* Floating Boxes */
+.box, .card, .container, .content, #main {
   background: transparent !important;
-  background-image: none !important;
-}
-
-/* 2) Create a single guaranteed cosmic layer on the root element.
-   This sits above any default page background but *behind* your content. */
-html::before {
-  content: "";
-  position: fixed;
-  inset: 0;                      /* shorthand for top/right/bottom/left:0 */
-  pointer-events: none;
-  z-index: 0 !important;
-
-  /* starfield + nebula (same visuals as before) */
-  background:
-    radial-gradient(circle 4px, rgba(255,255,255,0.95) 45%, transparent 46%) repeat,
-    radial-gradient(circle 8px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,
-    radial-gradient(circle 14px, rgba(255,255,255,0.8) 55%, transparent 56%) repeat,
-    radial-gradient(circle 22px, rgba(186,85,211,0.4) 30%, transparent 70%) repeat,
-    radial-gradient(circle 12px, rgba(255,255,255,1) 45%, transparent 46%) repeat,
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed,
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat top left fixed,
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat bottom right fixed;
-
-  background-size:
-    250px 250px,
-    500px 500px,
-    900px 900px,
-    1600px 1600px,
-    1600px 1600px,
-    cover, cover, cover;
-
-  background-position:
-    0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%,
-    center center, top left, bottom right;
-
-  background-repeat:
-    repeat, repeat, repeat, repeat, repeat,
-    no-repeat, no-repeat, no-repeat;
-
-  background-blend-mode: screen;
-  animation: starMotion 30s linear infinite;
-  opacity: 1 !important;
-}
-
-/* 3) Hide any Wolvden overlay pseudo-elements (aggressively) */
-.wrapper::before, .wrapper::after,
-.page::before, .page::after,
-#main::before, #main::after,
-.content::before, .content::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  box-shadow: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-/* 4) Remove background from top-level layout containers (the "gray" wrappers) */
-html body #main,
-html body .wrapper,
-html body .page,
-html body .container,
-html body .content,
-html body #footer,
-html body .navbar,
-html body .breadcrumb {
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* 5) Make sure your content (boxes, sidebar, header) sits above the cosmic layer.
-      Increase z-index so even late-inserted overlays can't cover your boxes. */
-html body .box,
-html body .card,
-html body #sidebar,
-html body #sidebar .card,
-html body #main,
-html body .container,
-html body .content {
-  position: relative !important;
-  z-index: 9999 !important; /* very high so content always appears above the root cosmic layer */
-  background: #1a0a2a !important; /* solid purple for readability */
   border: 1px solid #6a4c93 !important;
-  box-shadow: inset 0 0 15px rgba(138,43,226,0.5) !important;
+  box-shadow: 0 0 15px rgba(138,43,226,0.5) !important;
   color: #f0eaff !important;
 }
-
-/* Keep nav above content visually */
-html body .navbar, html body .breadcrumb {
-  position: relative !important;
-  z-index: 10000 !important;
+.box h2, .card h2 {
+  color: #dda0dd !important;
+  border-bottom: 2px solid #ba55d3 !important;
+  text-shadow: 0 0 6px rgba(186, 85, 211, 0.8);
+  padding-bottom: 4px;
 }
 
-/* Ensure headings / links remain readable */
-html body h1, html body h2, html body h3, html body h4, html body h5 {
-  color: #ffdbff !important;
-  text-shadow: 0 0 6px rgba(138,43,226,0.6) !important;
+/* Remove Wolvden's gray overlay */
+body, html body, html body #main, html body .page, html body .wrapper {
+  background: none !important;
+  background-color: transparent !important;
 }
-html body a { color: #dda0dd !important; }
-html body a:hover { color: #fff !important; }
-
-/* Keep the star animation keyframe (no changes) */
-@keyframes starMotion {
-  0%   { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; filter: brightness(1); }
-  25%  { background-position: -80px -40px, 35% 15%, 58% 28%, 78% 48%, 78% 48%, center, top left, bottom right; filter: brightness(1.1); }
-  50%  { background-position: -160px -80px, 40% 20%, 56% 26%, 76% 46%, 76% 46%, center, top left, bottom right; filter: brightness(0.95); }
-  75%  { background-position: -80px -40px, 35% 15%, 58% 28%, 78% 48%, 78% 48%, center, top left, bottom right; filter: brightness(1.05); }
-  100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; filter: brightness(1); }
+body[style], html body #main[style], html body .page[style], html body .wrapper[style] {
+  background: none !important;
+  background-image: none !important;
 }
-
-
-
