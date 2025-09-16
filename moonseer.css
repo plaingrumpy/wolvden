@@ -315,16 +315,26 @@ body.theme_light {
 .star:nth-child(1) { top: 20px; left: 50px; animation-delay: 0s; }
 .star:nth-child(2) { top: 100px; left: 200px; animation-delay: 1s; }
 .star:nth-child(3) { top: 180px; left: 400px; animation-delay: 2s; }
+/* Base shooting star */
+.shooting {
+  position: absolute;
+  width: 200px; /* trail length */
+  height: 4px;
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+  overflow: visible;
+  z-index: 5;
+}
 
-
-/* Star head */
+/* Head */
 .shooting::before {
   content: "";
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: white;
-  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.9);
   flex-shrink: 0;
   margin-right: 6px;
 }
@@ -338,28 +348,17 @@ body.theme_light {
   border-radius: 2px;
 }
 
-/* Right → Left (with diagonal) */
-@keyframes shoot-left {
-  0%   { transform: translate(120vw, -10vh); opacity: 0; }
+/* Diagonal rightward streak */
+@keyframes shoot-right {
+  0%   { transform: translate(-20vw, -30vh); opacity: 0; }
   10%  { opacity: 1; }
   50%  { opacity: 1; }
-  100% { transform: translate(-20vw, 30vh); opacity: 0; }
+  100% { transform: translate(120vw, 60vh); opacity: 0; }
 }
 
 /* Speeds */
 .shooting.fast   { animation: shoot-right 4s linear infinite; }
 .shooting.medium { animation: shoot-right 7s linear infinite; }
 .shooting.slow   { animation: shoot-right 12s linear infinite; }
-
-.shooting.reverse.fast   { animation: shoot-left 4s linear infinite; }
-.shooting.reverse.medium { animation: shoot-left 7s linear infinite; }
-.shooting.reverse.slow   { animation: shoot-left 12s linear infinite; }
-/* Right → Left (steeper diagonal) */
-@keyframes shoot-left {
-  0%   { transform: translate(120vw, -30vh); opacity: 0; }
-  10%  { opacity: 1; }
-  50%  { opacity: 1; }
-  100% { transform: translate(-20vw, 60vh); opacity: 0; }
-}
 
 
