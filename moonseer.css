@@ -1,112 +1,92 @@
-/* ---------- Cosmic Background ---------- */
+/* === Global Reset & Base === */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Georgia, serif !important;
-  color: #e6e0f0 !important;
-
-  background:
-    radial-gradient(circle 4px, rgba(255,255,255,0.95) 45%, transparent 46%) repeat,
-    radial-gradient(circle 8px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,
-    radial-gradient(circle 14px, rgba(255,255,255,0.8) 55%, transparent 56%) repeat,
-    radial-gradient(circle 22px, rgba(186,85,211,0.4) 30%, transparent 70%) repeat,
-    radial-gradient(circle 12px, rgba(255,255,255,1) 45%, transparent 46%) repeat,
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed,
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat top left fixed,
-    url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat bottom right fixed;
-
-  background-size: 
-    250px 250px, 
-    500px 500px, 
-    900px 900px, 
-    1600px 1600px, 
-    1600px 1600px, 
-    cover, cover, cover;
-
-  background-repeat: repeat, repeat, repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
-  background-blend-mode: screen;
-  animation: starMotion 30s linear infinite;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+    color: #e6e0f0;
+    background: radial-gradient(circle 4px, rgba(255, 255, 255, 0.95) 45%, transparent 46%) repeat,
+                radial-gradient(circle 8px, rgba(255, 255, 255, 0.9) 50%, transparent 51%) repeat,
+                radial-gradient(circle 14px, rgba(255, 255, 255, 0.8) 55%, transparent 56%) repeat,
+                radial-gradient(circle 22px, rgba(186, 85, 211, 0.4) 30%, transparent 70%) repeat,
+                radial-gradient(circle 12px, rgba(255, 255, 255, 1) 45%, transparent 46%) repeat,
+                url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat center center fixed,
+                url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat top left fixed,
+                url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat bottom right fixed;
+    background-size: 250px 250px, 500px 500px, 900px 900px, 1600px 1600px,
+                     1600px 1600px, cover, cover, cover;
+    background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right;
+    background-repeat: repeat, repeat, repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
+    background-blend-mode: screen;
+    animation: starMotion 30s linear infinite;
+    line-height: 1.6;
 }
 
+/* === Shooting Stars === */
 @keyframes starMotion {
-  0%   { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; }
-  50%  { background-position: -160px -80px, 40% 20%, 56% 26%, 76% 46%, 76% 46%, center, top left, bottom right; }
-  100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; }
+    0% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; }
+    50% { background-position: -160px -80px, 40% 20%, 56% 26%, 76% 46%, 76% 46%, center, top left, bottom right; }
+    100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; }
 }
 
-/* Nebula drift */
+/* === Nebula Drift === */
 body::after {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center;
-  background-size: 200%;
-  opacity: 0.25;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  animation: nebulaDrift 180s linear infinite;
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url(https://i.imgur.com/MMpl1zZ.jpeg) repeat center center;
+    background-size: 200%;
+    opacity: 0.25;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    animation: nebulaDrift 180s linear infinite;
 }
 
 @keyframes nebulaDrift {
-  0% { background-position: 0 0; }
-  50% { background-position: 50% 50%; }
-  100% { background-position: 0 0; }
+    0% { background-position: 0 0; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 0 0; }
 }
 
-/* Sidebar */
+/* === Boxes & Containers === */
+.box, .card, .container, .content, #main {
+    background: #1a0a2a !important;   /* solid, no transparency */
+    border: 1px solid #6a4c93 !important;
+    color: #f0eaff !important;
+    box-shadow: none !important;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* === Headings === */
+h1, h2, h3, h4, h5, h6 {
+    color: #dda0dd;
+    margin-bottom: 10px;
+}
+
+/* === Tables inside content === */
+.content table td {
+    background-color: rgba(106, 76, 147, 0.3);
+    border: 1px solid #6a4c93;
+    padding: 12px;
+    text-align: center;
+}
+
+/* === Sidebar fixes === */
 #sidebar {
-  background: rgba(30, 10, 45, 0.9) !important;
-  border-right: 2px solid #6a4c93 !important;
-  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5) !important;
-  color: #e6e0f0 !important;
-}
-#sidebar .card {
-  background: rgba(30, 10, 45, 0.95) !important;
-  border: 1px solid #6a4c93 !important;
-  box-shadow: inset 0 0 12px rgba(138,43,226,0.3);
-}
-#sidebar a { color: #dda0dd !important; }
-#sidebar a:hover { color: #fff !important; }
-
-/* Main column */
-#main {
-  margin: 0 !important;
-  padding: 0 !important;
-  background: none !important; /* let profile content control its own boxes */
-  border: none !important;
-  box-shadow: none !important;
-  display: flex;
-  justify-content: center;
-}
-#main > div {
-  max-width: 750px;
-  width: 100%;
-  padding: 20px;
+    background: #1a0a2a;
+    border: 1px solid #6a4c93;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #f0eaff;
 }
 
-/* Profile boxes (applied automatically) */
-.box, .card, .container, .content {
-  background: #1a0a2a !important;
-  border: 1px solid #6a4c93 !important;
-  box-shadow: none !important;
-  color: #f0eaff !important;
-}
-.box h2, .card h2 {
-  color: #dda0dd !important;
-  border-bottom: 2px solid #ba55d3 !important;
-  padding-bottom: 5px !important;
-}
-
-/* HP / EXP Bars */
-.bar {
-  background-color: #6a4c93 !important;
-  border: 1px solid #ba55d3 !important;
-  height: 12px !important;
-  border-radius: 6px !important;
-  overflow: hidden !important;
-  position: relative !important;
-}
-.bar-fill {
-  background: linear-gradient(90deg, #dda0dd, #ba55d3, #8a2be2) !important;
-  height: 100% !important;
+/* === Remove unwanted overlays === */
+body::before {
+    display: none !important;
 }
