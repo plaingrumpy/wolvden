@@ -229,6 +229,38 @@ body.theme_light {
 .progress .progress-bar.exp {
   background: linear-gradient(90deg, #191970, #4b0082, #6a0dad, #8a2be2) !important;
 }
+/* Base styling for all bars */
+.progress, .progress-bar {
+  border-radius: 6px !important;
+  overflow: hidden;
+  height: 14px !important;
+  border: 1px solid #e6e6fa !important;
+}
+
+/* ENERGY */
+.progress .bar.energy, 
+.progress .progress-bar.energy {
+  background: linear-gradient(90deg, #ffe57f, #ffb347, #ff8c00) !important;
+}
+
+/* HUNGER */
+.progress .bar.hunger, 
+.progress .progress-bar.hunger {
+  background: linear-gradient(90deg, #ff6f61, #ff3b3b, #b22222) !important;
+}
+
+/* HP */
+.progress .bar.hp, 
+.progress .progress-bar.hp {
+  background: linear-gradient(90deg, #8a2be2, #ba55d3, #dda0dd) !important;
+}
+
+/* EXP */
+.progress .bar.exp, 
+.progress .progress-bar.exp {
+  background: linear-gradient(90deg, #00bfff, #1e90ff, #4169e1) !important;
+}
+
 
 
 
