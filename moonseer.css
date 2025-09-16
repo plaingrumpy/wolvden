@@ -148,3 +148,12 @@ body[style], html body #main[style], html body .page[style], html body .wrapper[
   background: none !important;
   background-image: none !important;
 }
+/* Floating Boxes with readability */
+.box, .card, .container, .content, #main {
+  background: rgba(20, 5, 35, 0.92) !important; /* dark purple, slightly see-through */
+  border: 1px solid #6a4c93 !important;
+  box-shadow: 0 0 15px rgba(138,43,226,0.5) !important;
+  color: #f0eaff !important;
+  padding: 10px;
+}
+
