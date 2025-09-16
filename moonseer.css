@@ -100,4 +100,40 @@ body.theme_light {
 #content, #main, .wrapper, .page, .container, .content {
   background: transparent !important;
 }
+/* 🔮 Sidebar & System Boxes (Member Info, Groups, Account Settings) */
+.card {
+  background: #1a0a2a !important; /* solid purple */
+  border: 2px solid #6a4c93 !important;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.35);
+  color: #e6e0f0 !important;
+}
+
+/* Card headers (like "Member Information") */
+.card-header {
+  background: #2a0d3d !important;
+  border-bottom: 2px solid #6a4c93 !important;
+  color: #dda0dd !important;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Card body text */
+.card-body {
+  background: rgba(106, 76, 147, 0.35) !important;
+  padding: 10px;
+  color: #e6e0f0 !important;
+}
+
+/* Links inside cards */
+.card a {
+  color: #dda0dd !important;
+  text-decoration: none;
+}
+.card a:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
 
