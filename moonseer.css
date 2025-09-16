@@ -144,73 +144,6 @@ html::after {
   background: linear-gradient(90deg, #8a2be2, #dda0dd) !important;
   box-shadow: 0 0 8px rgba(138,43,226,0.8);
 }
-
-/* ---------- Boxes Fully Opaque ---------- */
-.box,
-.card,
-.container,
-.content {
-  background: #1a0a2a !important;
-  border: 1px solid #6a4c93 !important;
-  box-shadow: inset 0 0 15px rgba(138,43,226,0.5) !important;
-  color: #f0eaff !important;
-}
-.box h2 {
-  color: #dda0dd !important;
-  border-bottom: 2px solid #ba55d3 !important;
-  padding-bottom: 4px !important;
-}
-
-/* ---------- Headers & Links ---------- */
-h1, h2, h3, h4, h5 {
-  color: #ffdbff !important;
-  text-shadow: 0 0 6px rgba(138,43,226,0.6);
-}
-a { color: #dda0dd !important; }
-a:hover { color: #ffffff !important; }
-
-/* --- Force remove all gray backgrounds --- */
-body,
-#main,
-.container,
-.content,
-#footer,
-.navbar,
-.breadcrumb,
-.page,
-.wrapper {
-  background: none !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* --- Boxes fully opaque for readability --- */
-.box,
-.card,
-.container,
-.content,
-#main {
-  background: #1a0a2a !important;  /* deep solid violet */
-  border: 1px solid #6a4c93 !important;
-  box-shadow: inset 0 0 15px rgba(138,43,226,0.5) !important;
-  color: #f0eaff !important;
-}
-
-/* --- Sidebar fully opaque --- */
-#sidebar,
-#sidebar .card {
-  background: #1a0a2a !important;
-  border: 1px solid #6a4c93 !important;
-  box-shadow: 0 0 15px rgba(138,43,226,0.6) !important;
-  color: #f0eaff !important;
-}
-
-/* --- Headings more visible --- */
-h1, h2, h3, h4, h5 {
-  color: #ffdbff !important; /* bright lavender */
-  text-shadow: 0 0 6px rgba(138,43,226,0.6);
-}
 /* --- Kill gray background everywhere --- */
 body,
 html,
@@ -254,4 +187,5 @@ h1, h2, h3, h4, h5 {
   color: #ffdbff !important;
   text-shadow: 0 0 6px rgba(138,43,226,0.6);
 }
+
 
