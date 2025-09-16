@@ -278,6 +278,12 @@ body, html, #main, .wrapper, .page, .container, .content, #footer, .navbar, .bre
 #footer a:hover {
   color: #ffffff !important;
 }
+/* Align main content with sidebar */
+#main {
+  margin-top: 0 !important;   /* removes default offset */
+  padding-top: 0 !important;
+}
+
 
 
 
