@@ -325,4 +325,20 @@ html, body {
   max-width: 1100px;
   margin: 0 auto;
 }
+#fraProfileHTML, 
+#x__main, 
+#x__main .box {
+  background: #1a0a2a !important; /* deep solid purple */
+  opacity: 1 !important;          /* kill transparency */
+}
+
+#x__main .box {
+  border: 2px solid #6a4c93 !important;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px rgba(138, 42, 226, 0.35);
+  color: #f0eaff !important;
+}
+
 
