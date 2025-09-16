@@ -247,5 +247,37 @@ body, html, #main, .wrapper, .page, .container, .content, #footer, .navbar, .bre
   box-shadow: none !important;
 }
 
+/* ---------- Navbar Cosmic Styling ---------- */
+.navbar {
+  background: rgba(20, 5, 35, 0.95) !important;
+  border-bottom: 1px solid #6a4c93 !important;
+  box-shadow: 0 0 10px rgba(138,43,226,0.5) !important;
+  color: #f0eaff !important;
+}
+
+.navbar a {
+  color: #dda0dd !important;
+}
+.navbar a:hover {
+  color: #ffffff !important;
+}
+
+/* ---------- Footer Cosmic Styling ---------- */
+#footer {
+  background: rgba(20, 5, 35, 0.95) !important;
+  border-top: 1px solid #6a4c93 !important;
+  box-shadow: 0 -2px 8px rgba(138,43,226,0.4) !important;
+  color: #c8a2ff !important;
+  padding: 10px;
+  text-align: center;
+}
+
+#footer a {
+  color: #dda0dd !important;
+}
+#footer a:hover {
+  color: #ffffff !important;
+}
+
 
 
