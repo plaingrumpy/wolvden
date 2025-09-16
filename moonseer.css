@@ -207,5 +207,31 @@ html, body {
 .hunger-bar { background-color: #dc143c !important; }   /* crimson */
 .hp-bar     { background-color: #1e90ff !important; }   /* dodger blue */
 .exp-bar    { background-color: #32cd32 !important; }   /* lime green */
+/* Kill the gray overlay */
+#content,
+#main,
+#den, 
+#hoard,
+#chatter,
+#profile,
+#body, 
+.page {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* Absolute nuke of Wolvden's default background overlay */
+body::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Reinforce your own background */
+html, body {
+    background: url("YOUR-BACKGROUND-IMAGE.jpg") no-repeat center center fixed !important;
+    background-size: cover !important;
+    background-color: #000 !important; /* fallback */
+}
+
 
 
