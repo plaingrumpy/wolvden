@@ -340,5 +340,16 @@ html, body {
   box-shadow: 0 0 12px rgba(138, 42, 226, 0.35);
   color: #f0eaff !important;
 }
+#x__main .box {
+  background-color: #1a0a2a !important; /* solid purple */
+  border: 1px solid #6a4c93 !important;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.35);
+  color: #f0eaff !important;
+  opacity: 1 !important;
+}
+
 
 
