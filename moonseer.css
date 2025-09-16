@@ -1,355 +1,85 @@
-/* ---------- General Layout ---------- */
+/* ---------- Global Body ---------- */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Georgia, serif !important;
-    color: #e6e0f0 !important;
-    background:
-        radial-gradient(circle 4px, rgba(255, 255, 255, 0.95) 45%, transparent 46%) repeat,
-        radial-gradient(circle 8px, rgba(255, 255, 255, 0.9) 50%, transparent 51%) repeat,
-        radial-gradient(circle 14px, rgba(255, 255, 255, 0.8) 55%, transparent 56%) repeat,
-        radial-gradient(circle 22px, rgba(186, 85, 211, 0.4) 30%, transparent 70%) repeat,
-        radial-gradient(circle 12px, rgba(255, 255, 255, 1) 45%, transparent 46%) repeat,
-        url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed;
-    background-size: 250px 250px, 500px 500px, 900px 900px, 1600px 1600px, 1600px 1600px, cover;
-    background-blend-mode: screen;
-    animation: starMotion 30s linear infinite;
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif !important;
+  color: #e6e0f0 !important;
+  background: url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* ---------- Star Animation ---------- */
-@keyframes starMotion {
-  0%   { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center; filter: brightness(1); }
-  50%  { background-position: -160px -80px, 40% 20%, 56% 26%, 76% 46%, 76% 46%, center; filter: brightness(0.95); }
-  100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center; filter: brightness(1); }
-}
-
-/* Nebula drift */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center;
-    background-size: 200%;
-    opacity: 0.3;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    animation: nebulaDrift 180s linear infinite;
-}
-@keyframes nebulaDrift {
-  from { background-position: 0 0; }
-  to { background-position: 200% 200%; }
-}
-
-/* ---------- Main Layout ---------- */
-#main {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 20px;
-    display: block !important;
+/* ---------- Profile Container ---------- */
+#x__main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* ---------- Content Boxes ---------- */
-.box, .card, .content {
-    background: #1a0a2a !important; /* fully solid */
-    border: 2px solid #6a4c93 !important;
-    border-radius: 10px;
-    padding: 20px !important;
-    margin-bottom: 20px;
-    color: #f0eaff !important;
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
-}
-
-/* Titles inside boxes */
-.box h1, .box h2, .card h1, .card h2 {
-    color: #dda0dd !important;
-    border-bottom: 2px solid #ba55d3 !important;
-    padding-bottom: 6px;
-    margin-bottom: 12px;
-}
-
-/* ---------- Sidebar ---------- */
-.sidebar, #sidebar {
-    background: #1a0a2a !important;
-    border: 2px solid #6a4c93 !important;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(138,43,226,0.5);
-    padding: 12px;
-    word-wrap: break-word;
-}
-.sidebar a { color: #dda0dd !important; }
-.sidebar a:hover { color: #ffffff !important; }
-
-/* ---------- Stat Bars ---------- */
-.bar {
-    background-color: #2a0d40 !important;
-    border: 1px solid #6a4c93 !important;
-    border-radius: 6px !important;
-    height: 14px !important;
-    overflow: hidden !important;
-}
-.bar-fill {
-    height: 100% !important;
-    border-radius: 6px !important;
-}
-#progress-energy .bar-fill {
-    background: linear-gradient(90deg, #00ff88, #00cc66) !important;
-}
-#progress-hunger .bar-fill {
-    background: linear-gradient(90deg, #ff6600, #cc3300) !important;
-}
-#progress-hp .bar-fill {
-    background: linear-gradient(90deg, #ff3366, #cc0033) !important;
-}
-#progress-exp .bar-fill {
-    background: linear-gradient(90deg, #00bfff, #0044cc) !important;
-}
-/* Main background - unified, no gray banding */
-body {
-    background: url('YOUR-BACKGROUND-IMAGE.jpg') no-repeat center center fixed;
-    background-size: cover;
-    background-color: #000 !important;
-    margin: 0;
-    padding: 0;
-    font-family: Georgia, serif;
-}
-
-/* Sidebar wrapping fix */
-.sidebar {
-    word-wrap: break-word;
-    white-space: normal !important;
-    overflow-wrap: break-word;
-}
-
-/* Context / content boxes - fully solid */
-.box {
-    background-color: #120025 !important; /* deep purple solid */
-    border: 2px solid #a64ca6;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    color: #e6e0f0;
-    box-shadow: 0px 0px 12px rgba(166, 76, 166, 0.6);
-}
-
-/* Section titles */
-.box h2 {
-    font-size: 1.8em;
-    color: #dda0dd;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #ba55d3;
-    padding-bottom: 5px;
-}
-
-/* Sidebar modules (energy, hunger, hp, etc.) */
-.sidebar .module {
-    background-color: #120025 !important;
-    border: 1px solid #a64ca6;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-/* HP/EXP bars colored */
-.bar.energy { background-color: #ffcc00 !important; }
-.bar.hunger { background-color: #ff3333 !important; }
-.bar.hp { background-color: #3399ff !important; }
-.bar.exp { background-color: #66cc66 !important; }
-
-/* Remove gray background overlays */
-.content,
-.main,
-.container,
-.inner-container {
-    background: transparent !important;
-}
-
-/* Fix bottom color shift */
-#footer,
-.footer {
-    background: transparent !important;
-}
-/* === Fix context boxes to be fully solid === */
-.box {
-    background-color: #0a0515 !important; /* solid background */
-    border: 2px solid #ba55d3;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-/* === Sidebar wrapping fix === */
-#sidebar {
-    word-wrap: break-word;
-    white-space: normal;
-    overflow-wrap: break-word;
-}
-
-/* === Remove the gray at the bottom === */
-body {
-    background-color: transparent !important;
-}
-
-/* === Smooth background, fix color shift === */
-html, body {
-    background-image: url("YOUR-BACKGROUND-IMAGE.jpg"); /* keep your stars/space */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-/* === Main content wider === */
-#main {
-    max-width: 1200px;   /* wider */
-    margin: 0 auto;
-}
-
-/* === Make HP/EXP bars colorful === */
-.energy-bar { background-color: #ffa500 !important; }   /* orange */
-.hunger-bar { background-color: #dc143c !important; }   /* crimson */
-.hp-bar     { background-color: #1e90ff !important; }   /* dodger blue */
-.exp-bar    { background-color: #32cd32 !important; }   /* lime green */
-/* Kill the gray overlay */
-#content,
-#main,
-#den, 
-#hoard,
-#chatter,
-#profile,
-#body, 
-.page {
-    background: none !important;
-    background-color: transparent !important;
-}
-
-/* Absolute nuke of Wolvden's default background overlay */
-body::before {
-    content: none !important;
-    display: none !important;
-}
-
-/* Reinforce your own background */
-html, body {
-    background: url("YOUR-BACKGROUND-IMAGE.jpg") no-repeat center center fixed !important;
-    background-size: cover !important;
-    background-color: #000 !important; /* fallback */
-}
-/* === FORCE BOXES TO BE SOLID PURPLE === */
 #x__main .box {
   background-color: #1a0a2a !important; /* solid purple */
   border: 2px solid #6a4c93 !important;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 12px rgba(138, 43, 226, 0.35);
   color: #f0eaff !important;
 }
 
-/* === Headings inside boxes === */
-#x__main .box h1,
-#x__main .box h2 {
-  color: #dda0dd !important;
-  border-bottom: 2px solid #ba55d3;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-}
-
-/* === Tables inside boxes: solidize cells === */
-#x__main .box table,
-#x__main .box td,
-#x__main .box th {
-  background-color: #1a0a2a !important; /* force solid */
-  border: 1px solid #6a4c93 !important;
-  color: #f0eaff !important;
-}
-
-/* === Spans inside boxes (like moon phases) === */
-#x__main .box span {
-  display: inline-block;
-  background-color: #2a1242 !important; /* solid dark purple tag */
-  border: 1px solid #6a4c93;
-  color: #e6e6fa !important;
-  padding: 6px 12px;
-  margin: 4px;
-  border-radius: 4px;
-}
-/* === Force all profile boxes solid === */
-#x__main .box {
-  background-color: #1a0a2a !important; /* solid deep purple */
-  border: 2px solid #6a4c93 !important;
-  border-radius: 10px;
-  padding: 20px !important;
-  margin-bottom: 20px !important;
-  box-shadow: 0 0 12px rgba(138, 43, 226, 0.35) !important;
-  color: #f0eaff !important;
-  opacity: 1 !important;
-}
-
-/* Titles */
-#x__main .box h1,
 #x__main .box h2 {
   color: #dda0dd !important;
   border-bottom: 2px solid #ba55d3 !important;
-  padding-bottom: 5px !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
 }
 
-/* Tables inside boxes */
-#x__main .box table,
-#x__main .box td,
-#x__main .box th {
-  background-color: #1a0a2a !important; /* fully solid */
+/* ---------- Sidebar ---------- */
+#sidebar {
+  background: rgba(30, 10, 45, 0.9) !important;
+  border-left: 2px solid #6a4c93;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+  color: #e6e0f0;
+}
+
+#sidebar .card {
+  background: #1a0a2a !important;
   border: 1px solid #6a4c93 !important;
-  color: #f0eaff !important;
+  box-shadow: inset 0 0 12px rgba(138,43,226,0.3);
 }
 
-/* Moon phase spans */
-#x__main .box span {
-  display: inline-block;
-  background-color: #2a1242 !important; /* solid badge */
-  border: 1px solid #6a4c93 !important;
-  color: #e6e6fa !important;
-  padding: 6px 12px;
-  margin: 4px;
-  border-radius: 4px;
-}
-
-/* Links inside boxes */
-#x__main .box a {
+/* Sidebar links */
+#sidebar a {
   color: #dda0dd !important;
 }
-#x__main .box a:hover {
+#sidebar a:hover {
   color: #ffffff !important;
 }
 
-/* Make the container wider so it balances with sidebar */
-#x__main {
-  max-width: 1100px;
-  margin: 0 auto;
+/* ---------- Stat Bars ---------- */
+.bar {
+  background-color: #6a4c93 !important;
+  border: 1px solid #ba55d3 !important;
+  height: 14px !important;
+  border-radius: 6px !important;
+  overflow: hidden;
 }
-#fraProfileHTML, 
-#x__main, 
-#x__main .box {
-  background: #1a0a2a !important; /* deep solid purple */
-  opacity: 1 !important;          /* kill transparency */
-}
-
-#x__main .box {
-  border: 2px solid #6a4c93 !important;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 12px rgba(138, 42, 226, 0.35);
-  color: #f0eaff !important;
-}
-#x__main .box {
-  background-color: #1a0a2a !important; /* solid purple */
-  border: 1px solid #6a4c93 !important;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 12px rgba(138, 43, 226, 0.35);
-  color: #f0eaff !important;
-  opacity: 1 !important;
+.bar-fill {
+  background: linear-gradient(90deg, #dda0dd, #ba55d3, #8a2be2) !important;
+  height: 100% !important;
 }
 
+/* ---------- Tables inside boxes ---------- */
+#x__main table td {
+  background-color: rgba(106, 76, 147, 0.4);
+  border: 1px solid #6a4c93;
+  padding: 10px;
+}
 
-
+/* ---------- Moon Phase Spans ---------- */
+#x__main span {
+  background-color: rgba(106, 76, 147, 0.6);
+  border: 1px solid #6a4c93;
+  padding: 6px 12px;
+  margin: 4px;
+  display: inline-block;
+}
