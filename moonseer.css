@@ -90,3 +90,26 @@ h1, h2, h3, h4, h5, h6 {
 body::before {
     display: none !important;
 }
+/* Force main content boxes to align full width */
+.box, .card, .container, .content, #main {
+    display: block !important;   /* stop weird inline stacking */
+    width: 100% !important;      /* take full available width */
+    max-width: 800px;            /* optional: keeps content readable */
+    margin: 15px auto !important;/* center it under the sidebar */
+    padding: 15px !important;
+    box-sizing: border-box;
+}
+
+/* Fix text wrapping inside boxes */
+.box p, .box td, .box div {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+/* Reset any accidental flex/grid issues */
+#main, .content, .container {
+    display: block !important;
+    float: none !important;
+    clear: both !important;
+}
+
