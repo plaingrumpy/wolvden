@@ -83,17 +83,21 @@ body {
   margin: 4px;
   display: inline-block;
 }
-/* Kill Wolvden's default gray */
-body,
-#main,
-.container,
-.content,
-.wrapper,
-.page,
-#fraProfileHTML {
+#content, #main, .wrapper, .page, .container, .content {
+  background: transparent !important;
+}
+html, body {
+  background: url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed !important;
+  background-size: cover !important;
+  background-color: transparent !important;
+}
+
+body.theme_dark,
+body.theme_light {
   background: none !important;
   background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
+}
+#content, #main, .wrapper, .page, .container, .content {
+  background: transparent !important;
 }
 
