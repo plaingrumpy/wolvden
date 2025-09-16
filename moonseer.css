@@ -271,3 +271,58 @@ html, body {
   margin: 4px;
   border-radius: 4px;
 }
+/* === Force all profile boxes solid === */
+#x__main .box {
+  background-color: #1a0a2a !important; /* solid deep purple */
+  border: 2px solid #6a4c93 !important;
+  border-radius: 10px;
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.35) !important;
+  color: #f0eaff !important;
+  opacity: 1 !important;
+}
+
+/* Titles */
+#x__main .box h1,
+#x__main .box h2 {
+  color: #dda0dd !important;
+  border-bottom: 2px solid #ba55d3 !important;
+  padding-bottom: 5px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Tables inside boxes */
+#x__main .box table,
+#x__main .box td,
+#x__main .box th {
+  background-color: #1a0a2a !important; /* fully solid */
+  border: 1px solid #6a4c93 !important;
+  color: #f0eaff !important;
+}
+
+/* Moon phase spans */
+#x__main .box span {
+  display: inline-block;
+  background-color: #2a1242 !important; /* solid badge */
+  border: 1px solid #6a4c93 !important;
+  color: #e6e6fa !important;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+/* Links inside boxes */
+#x__main .box a {
+  color: #dda0dd !important;
+}
+#x__main .box a:hover {
+  color: #ffffff !important;
+}
+
+/* Make the container wider so it balances with sidebar */
+#x__main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
