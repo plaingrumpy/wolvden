@@ -197,38 +197,38 @@ body.theme_light {
   background-color: #4b006e !important; /* brighter purple hover */
   color: #fff !important;
 }
-/* HP bar – deep violet to lavender */
-.bar.hp {
-  background: linear-gradient(90deg, #6a0dad, #8a2be2, #ba55d3, #dda0dd);
-  border: 1px solid #e6e6fa;
-  height: 12px;
-  border-radius: 6px;
+
+/* General bar container fix */
+.progress, .progress-bar {
+  border-radius: 6px !important;
+  overflow: hidden;
+  height: 12px !important;
+  border: 1px solid #e6e6fa !important;
 }
 
-/* Energy bar – indigo to bright violet */
-.bar.energy {
-  background: linear-gradient(90deg, #4b0082, #6a0dad, #9b30ff, #ba55d3);
-  border: 1px solid #e6e6fa;
-  height: 12px;
-  border-radius: 6px;
+/* HP bar */
+.progress .bar.hp,
+.progress .progress-bar.hp {
+  background: linear-gradient(90deg, #6a0dad, #8a2be2, #ba55d3, #dda0dd) !important;
 }
 
-/* Hunger bar – magenta to soft pink glow */
-.bar.hunger {
-  background: linear-gradient(90deg, #8b008b, #ba55d3, #dda0dd, #ffb6c1);
-  border: 1px solid #e6e6fa;
-  height: 12px;
-  border-radius: 6px;
+/* Energy bar */
+.progress .bar.energy,
+.progress .progress-bar.energy {
+  background: linear-gradient(90deg, #4b0082, #6a0dad, #9b30ff, #ba55d3) !important;
 }
 
-/* EXP bar – cosmic blue-violet mix */
-.bar.exp {
-  background: linear-gradient(90deg, #191970, #4b0082, #6a0dad, #8a2be2);
-  border: 1px solid #e6e6fa;
-  height: 12px;
-  border-radius: 6px;
+/* Hunger bar */
+.progress .bar.hunger,
+.progress .progress-bar.hunger {
+  background: linear-gradient(90deg, #8b008b, #ba55d3, #dda0dd, #ffb6c1) !important;
 }
 
+/* EXP bar */
+.progress .bar.exp,
+.progress .progress-bar.exp {
+  background: linear-gradient(90deg, #191970, #4b0082, #6a0dad, #8a2be2) !important;
+}
 
 
 
