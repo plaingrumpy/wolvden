@@ -260,6 +260,38 @@ body.theme_light {
 .progress .progress-bar.exp {
   background: linear-gradient(90deg, #00bfff, #1e90ff, #4169e1) !important;
 }
+/* General bar container */
+.progress, .progress-bar {
+  border-radius: 6px !important;
+  overflow: hidden;
+  height: 14px !important;
+  border: 1px solid #e6e6fa !important;
+}
+
+/* Energy Bar */
+.bar.energy, .progress-bar.energy {
+  background: linear-gradient(90deg, #ffd700, #ffae42, #ff7f00) !important;
+  background-color: transparent !important;
+}
+
+/* Hunger Bar */
+.bar.hunger, .progress-bar.hunger {
+  background: linear-gradient(90deg, #ff9999, #ff3333, #b22222) !important;
+  background-color: transparent !important;
+}
+
+/* HP Bar */
+.bar.hp, .progress-bar.hp {
+  background: linear-gradient(90deg, #dda0dd, #ba55d3, #8a2be2) !important;
+  background-color: transparent !important;
+}
+
+/* EXP Bar */
+.bar.exp, .progress-bar.exp {
+  background: linear-gradient(90deg, #7fffd4, #00ced1, #1e90ff) !important;
+  background-color: transparent !important;
+}
+
 
 
 
