@@ -320,23 +320,19 @@ body.theme_light {
 .shooting {
   position: absolute;
   top: 40px;
-  left: -100px;
+  right: -100px; /* start from the right instead of left */
   width: 120px;
   height: 2px;
-  background: linear-gradient(90deg, white, transparent);
+  background: linear-gradient(270deg, white, transparent); /* flip gradient */
   animation: shoot 5s linear infinite;
   opacity: 0.8;
 }
 
-/* Animations */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
-}
-
+/* Adjusted animation */
 @keyframes shoot {
   0% { transform: translateX(0) translateY(0); opacity: 0; }
   10% { opacity: 1; }
-  50% { transform: translateX(500px) translateY(150px); opacity: 1; }
-  100% { opacity: 0; transform: translateX(1000px) translateY(300px); }
+  50% { transform: translateX(-500px) translateY(150px); opacity: 1; }
+  100% { opacity: 0; transform: translateX(-1000px) translateY(300px); }
 }
+
