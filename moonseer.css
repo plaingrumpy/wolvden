@@ -1,115 +1,105 @@
-/* === Global Reset & Base === */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
+/* ---------- General Layout ---------- */
 body {
     margin: 0;
     padding: 0;
-    font-family: Georgia, serif;
-    color: #e6e0f0;
-    background: radial-gradient(circle 4px, rgba(255, 255, 255, 0.95) 45%, transparent 46%) repeat,
-                radial-gradient(circle 8px, rgba(255, 255, 255, 0.9) 50%, transparent 51%) repeat,
-                radial-gradient(circle 14px, rgba(255, 255, 255, 0.8) 55%, transparent 56%) repeat,
-                radial-gradient(circle 22px, rgba(186, 85, 211, 0.4) 30%, transparent 70%) repeat,
-                radial-gradient(circle 12px, rgba(255, 255, 255, 1) 45%, transparent 46%) repeat,
-                url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat center center fixed,
-                url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat top left fixed,
-                url(https://i.imgur.com/MMpl1zZ.jpeg) no-repeat bottom right fixed;
-    background-size: 250px 250px, 500px 500px, 900px 900px, 1600px 1600px,
-                     1600px 1600px, cover, cover, cover;
-    background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right;
-    background-repeat: repeat, repeat, repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
+    font-family: Georgia, serif !important;
+    color: #e6e0f0 !important;
+    background:
+        radial-gradient(circle 4px, rgba(255, 255, 255, 0.95) 45%, transparent 46%) repeat,
+        radial-gradient(circle 8px, rgba(255, 255, 255, 0.9) 50%, transparent 51%) repeat,
+        radial-gradient(circle 14px, rgba(255, 255, 255, 0.8) 55%, transparent 56%) repeat,
+        radial-gradient(circle 22px, rgba(186, 85, 211, 0.4) 30%, transparent 70%) repeat,
+        radial-gradient(circle 12px, rgba(255, 255, 255, 1) 45%, transparent 46%) repeat,
+        url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed;
+    background-size: 250px 250px, 500px 500px, 900px 900px, 1600px 1600px, 1600px 1600px, cover;
     background-blend-mode: screen;
     animation: starMotion 30s linear infinite;
-    line-height: 1.6;
 }
 
-/* === Shooting Stars === */
+/* ---------- Star Animation ---------- */
 @keyframes starMotion {
-    0% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; }
-    50% { background-position: -160px -80px, 40% 20%, 56% 26%, 76% 46%, 76% 46%, center, top left, bottom right; }
-    100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; }
+  0%   { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center; filter: brightness(1); }
+  50%  { background-position: -160px -80px, 40% 20%, 56% 26%, 76% 46%, 76% 46%, center; filter: brightness(0.95); }
+  100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center; filter: brightness(1); }
 }
 
-/* === Nebula Drift === */
+/* Nebula drift */
 body::after {
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: url(https://i.imgur.com/MMpl1zZ.jpeg) repeat center center;
+    background: url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center;
     background-size: 200%;
-    opacity: 0.25;
+    opacity: 0.3;
     mix-blend-mode: screen;
     pointer-events: none;
     animation: nebulaDrift 180s linear infinite;
 }
-
 @keyframes nebulaDrift {
-    0% { background-position: 0 0; }
-    50% { background-position: 50% 50%; }
-    100% { background-position: 0 0; }
+  from { background-position: 0 0; }
+  to { background-position: 200% 200%; }
 }
 
-/* === Boxes & Containers === */
-.box, .card, .container, .content, #main {
-    background: #1a0a2a !important;   /* solid, no transparency */
-    border: 1px solid #6a4c93 !important;
-    color: #f0eaff !important;
-    box-shadow: none !important;
+/* ---------- Main Layout ---------- */
+#main {
+    max-width: 1100px;
+    margin: 20px auto;
     padding: 20px;
-    margin-bottom: 20px;
-}
-
-/* === Headings === */
-h1, h2, h3, h4, h5, h6 {
-    color: #dda0dd;
-    margin-bottom: 10px;
-}
-
-/* === Tables inside content === */
-.content table td {
-    background-color: rgba(106, 76, 147, 0.3);
-    border: 1px solid #6a4c93;
-    padding: 12px;
-    text-align: center;
-}
-
-/* === Sidebar fixes === */
-#sidebar {
-    background: #1a0a2a;
-    border: 1px solid #6a4c93;
-    padding: 15px;
-    margin-bottom: 20px;
-    color: #f0eaff;
-}
-
-/* === Remove unwanted overlays === */
-body::before {
-    display: none !important;
-}
-/* Force main content boxes to align full width */
-.box, .card, .container, .content, #main {
-    display: block !important;   /* stop weird inline stacking */
-    width: 100% !important;      /* take full available width */
-    max-width: 800px;            /* optional: keeps content readable */
-    margin: 15px auto !important;/* center it under the sidebar */
-    padding: 15px !important;
-    box-sizing: border-box;
-}
-
-/* Fix text wrapping inside boxes */
-.box p, .box td, .box div {
-    white-space: normal !important;
-    word-wrap: break-word !important;
-}
-
-/* Reset any accidental flex/grid issues */
-#main, .content, .container {
     display: block !important;
-    float: none !important;
-    clear: both !important;
 }
 
+/* ---------- Content Boxes ---------- */
+.box, .card, .content {
+    background: #1a0a2a !important; /* fully solid */
+    border: 2px solid #6a4c93 !important;
+    border-radius: 10px;
+    padding: 20px !important;
+    margin-bottom: 20px;
+    color: #f0eaff !important;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+}
+
+/* Titles inside boxes */
+.box h1, .box h2, .card h1, .card h2 {
+    color: #dda0dd !important;
+    border-bottom: 2px solid #ba55d3 !important;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar, #sidebar {
+    background: #1a0a2a !important;
+    border: 2px solid #6a4c93 !important;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(138,43,226,0.5);
+    padding: 12px;
+    word-wrap: break-word;
+}
+.sidebar a { color: #dda0dd !important; }
+.sidebar a:hover { color: #ffffff !important; }
+
+/* ---------- Stat Bars ---------- */
+.bar {
+    background-color: #2a0d40 !important;
+    border: 1px solid #6a4c93 !important;
+    border-radius: 6px !important;
+    height: 14px !important;
+    overflow: hidden !important;
+}
+.bar-fill {
+    height: 100% !important;
+    border-radius: 6px !important;
+}
+#progress-energy .bar-fill {
+    background: linear-gradient(90deg, #00ff88, #00cc66) !important;
+}
+#progress-hunger .bar-fill {
+    background: linear-gradient(90deg, #ff6600, #cc3300) !important;
+}
+#progress-hp .bar-fill {
+    background: linear-gradient(90deg, #ff3366, #cc0033) !important;
+}
+#progress-exp .bar-fill {
+    background: linear-gradient(90deg, #00bfff, #0044cc) !important;
+}
