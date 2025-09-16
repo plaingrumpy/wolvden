@@ -232,90 +232,42 @@ html, body {
     background-size: cover !important;
     background-color: #000 !important; /* fallback */
 }
-/* =========================
-   FORCE SOLID CONTEXT BOXES
-   ========================= */
-
-/* 1) Ensure the main box shells are fully solid */
-html body .box,
-html body .card,
-html body .container,
-html body .content,
-html body #main,
-html body #sidebar,
-html body #sidebar .card {
-  background-color: #1a0a2a !important;   /* solid deep purple */
-  background-image: none !important;
-  background: #1a0a2a !important;
-  background-blend-mode: normal !important;
-  opacity: 1 !important;
+/* === FORCE BOXES TO BE SOLID PURPLE === */
+#x__main .box {
+  background-color: #1a0a2a !important; /* solid purple */
   border: 2px solid #6a4c93 !important;
-  box-shadow: 0 0 12px rgba(138,43,226,0.35) !important;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.35);
   color: #f0eaff !important;
 }
 
-/* 2) Remove ANY background on child elements (inline styles included) so parent shows through */
-html body .box * ,
-html body .card * ,
-html body .container * ,
-html body .content * {
-  background: transparent !important;
-  background-image: none !important;
-  background-color: transparent !important;
-  background-blend-mode: normal !important;
+/* === Headings inside boxes === */
+#x__main .box h1,
+#x__main .box h2 {
+  color: #dda0dd !important;
+  border-bottom: 2px solid #ba55d3;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-/* 3) Specifically target table cells inside boxes (they often have inline BGs) */
-html body .box td,
-html body .box th,
-html body .card td,
-html body .card th {
-  background: transparent !important;
-  background-image: none !important;
-  background-color: transparent !important;
-  border-color: rgba(106,76,147,0.35) !important;
-}
-
-/* 4) Kill pseudo-element overlays that might tint the boxes */
-html body .box::before,
-html body .box::after,
-html body .card::before,
-html body .card::after,
-html body #main::before,
-html body #main::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  opacity: 1 !important;
-}
-
-/* 5) Re-affirm readable text color and no transparency */
-html body,
-html body .box,
-html body .card,
-html body .content,
-html body #main {
+/* === Tables inside boxes: solidize cells === */
+#x__main .box table,
+#x__main .box td,
+#x__main .box th {
+  background-color: #1a0a2a !important; /* force solid */
+  border: 1px solid #6a4c93 !important;
   color: #f0eaff !important;
 }
 
-/* 6) Safety-net: remove inline-style backgrounds on any element inside a box */
-html body .box [style*="background"],
-html body .card [style*="background"],
-html body .box [style*="background-color"],
-html body .card [style*="background-color"] {
-  background: transparent !important;
-  background-image: none !important;
-  background-color: transparent !important;
+/* === Spans inside boxes (like moon phases) === */
+#x__main .box span {
+  display: inline-block;
+  background-color: #2a1242 !important; /* solid dark purple tag */
+  border: 1px solid #6a4c93;
+  color: #e6e6fa !important;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 4px;
 }
-
-/* 7) Optional: if any box is still semi-transparent, force fully opaque */
-html body .box, html body .card {
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
-  -webkit-transform: translateZ(0) !important;
-  transform: none !important;
-}
-
-
-
-
