@@ -83,3 +83,17 @@ body {
   margin: 4px;
   display: inline-block;
 }
+/* Kill Wolvden's default gray */
+body,
+#main,
+.container,
+.content,
+.wrapper,
+.page,
+#fraProfileHTML {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
