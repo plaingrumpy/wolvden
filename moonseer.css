@@ -168,4 +168,44 @@ body {
 .footer {
     background: transparent !important;
 }
+/* === Fix context boxes to be fully solid === */
+.box {
+    background-color: #0a0515 !important; /* solid background */
+    border: 2px solid #ba55d3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* === Sidebar wrapping fix === */
+#sidebar {
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* === Remove the gray at the bottom === */
+body {
+    background-color: transparent !important;
+}
+
+/* === Smooth background, fix color shift === */
+html, body {
+    background-image: url("YOUR-BACKGROUND-IMAGE.jpg"); /* keep your stars/space */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* === Main content wider === */
+#main {
+    max-width: 1200px;   /* wider */
+    margin: 0 auto;
+}
+
+/* === Make HP/EXP bars colorful === */
+.energy-bar { background-color: #ffa500 !important; }   /* orange */
+.hunger-bar { background-color: #dc143c !important; }   /* crimson */
+.hp-bar     { background-color: #1e90ff !important; }   /* dodger blue */
+.exp-bar    { background-color: #32cd32 !important; }   /* lime green */
+
 
