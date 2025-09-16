@@ -5,6 +5,7 @@ body {
     font-family: Georgia, serif !important;
     color: #e6e0f0 !important;
 
+    /* Starfield layers */
     background:
       radial-gradient(circle 4px, rgba(255,255,255,0.95) 45%, transparent 46%) repeat,
       radial-gradient(circle 8px, rgba(255,255,255,0.9) 50%, transparent 51%) repeat,
@@ -15,24 +16,30 @@ body {
       url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat top left fixed,
       url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat bottom right fixed;
 
-    background-size: 
+    background-size:
         250px 250px,
         500px 500px,
         900px 900px,
         1600px 1600px,
         1600px 1600px,
         cover, cover, cover;
-    background-position: 
+    background-position:
         0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%,
         center center, top left, bottom right;
-    background-repeat: repeat, repeat, repeat, repeat, repeat,
+    background-repeat:
+        repeat, repeat, repeat, repeat, repeat,
         no-repeat, no-repeat, no-repeat;
     background-blend-mode: screen;
-
     animation: starMotion 30s linear infinite;
 }
 
-/* ---------- Starfield drifting + subtle twinkle ---------- */
+/* Remove Wolvden default gray background */
+body {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* ---------- Starfield Drift + Twinkle ---------- */
 @keyframes starMotion {
   0%   { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; filter: brightness(1); }
   25%  { background-position: -80px -40px, 35% 15%, 58% 28%, 78% 48%, 78% 48%, center, top left, bottom right; filter: brightness(1.1); }
@@ -41,14 +48,13 @@ body {
   100% { background-position: 0 0, 30% 10%, 60% 30%, 80% 50%, 80% 50%, center, top left, bottom right; filter: brightness(1); }
 }
 
-/* ---------- Nebula drift ---------- */
+/* ---------- Nebula Drift Overlay ---------- */
 body::after {
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background:
-        url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center,
-        url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center;
+    background: url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center,
+                url("https://i.imgur.com/MMpl1zZ.jpeg") repeat center center;
     background-size: cover, 200%;
     opacity: 0.25;
     mix-blend-mode: screen;
@@ -56,12 +62,11 @@ body::after {
     animation: nebulaDrift 180s linear infinite;
 }
 @keyframes nebulaDrift {
-  0%   { background-position: center center, 0% 0%; }
-  50%  { background-position: center center, 100% 50%; }
-  100% { background-position: center center, 0% 0%; }
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 500px 500px, -500px -500px; }
 }
 
-/* ---------- Supernova pulsing ---------- */
+/* ---------- Supernova Pulse ---------- */
 body::before {
     content: "";
     position: fixed;
@@ -76,17 +81,11 @@ body::before {
     animation: supernovaPulse 10s ease-in-out infinite;
 }
 @keyframes supernovaPulse {
-  0%, 100% { opacity: 0.6; }
+  0%, 100% { opacity: 0.7; }
   50% { opacity: 1; }
 }
 
 /* ---------- Shooting Stars ---------- */
-@keyframes shootingStar {
-  0% { transform: translateX(-10vw) translateY(-10vh) scale(0.8); opacity: 0; }
-  10% { opacity: 1; }
-  50% { transform: translateX(120vw) translateY(60vh) scale(1.2); opacity: 1; }
-  100% { transform: translateX(200vw) translateY(120vh) scale(1); opacity: 0; }
-}
 html::before,
 html::after {
     content: "";
@@ -104,35 +103,40 @@ html::after {
 html::after {
     animation-delay: 3s;
 }
+@keyframes shootingStar {
+  0% { transform: translateX(-10vw) translateY(-10vh) scale(0.8); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateX(120vw) translateY(60vh) scale(1.2); opacity: 1; }
+  100% { transform: translateX(200vw) translateY(120vh) scale(1); opacity: 0; }
+}
 
 /* ---------- Sidebar Styling ---------- */
-.sidebar, #sidebar {
-    background: rgba(30, 10, 45, 0.9) !important;
-    border: 1px solid #6a4c93 !important;
-    box-shadow: 0 0 15px rgba(138,43,226,0.7) !important;
-    color: #e6e0f0 !important;
-}
-.sidebar a, #sidebar a { color: #dda0dd !important; }
-.sidebar a:hover, #sidebar a:hover { color: #ffffff !important; }
-
-#sidebar .card {
-  background: rgba(30, 10, 45, 0.6) !important;
+#sidebar {
+  background: #1a0a2a !important;
   border: 1px solid #6a4c93 !important;
+  box-shadow: 0 0 15px rgba(138,43,226,0.7) !important;
+  color: #f0eaff !important;
+  display: inline-block !important;
+  height: auto !important;
+  min-height: unset !important;
+}
+#sidebar .card {
+  background: #1e0d33 !important;
+  border: 1px solid #8a2be2 !important;
   box-shadow: inset 0 0 12px rgba(138,43,226,0.3);
 }
 
-/* ---------- HP/EXP Bars ---------- */
+/* ---------- HP / EXP Bars ---------- */
 .bar {
-    background-color: #6a4c93 !important;
-    border: 1px solid #ba55d3 !important;
-    height: 12px !important;
-    border-radius: 6px !important;
-    overflow: hidden !important;
-    position: relative !important;
+  background-color: #6a4c93 !important;
+  border: 1px solid #ba55d3 !important;
+  height: 12px !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
 }
 .bar-fill {
-    background: linear-gradient(90deg, #dda0dd, #ba55d3, #8a2be2) !important;
-    height: 100% !important;
+  background: linear-gradient(90deg, #dda0dd, #ba55d3, #8a2be2) !important;
+  height: 100% !important;
 }
 #progress-energy,
 #progress-hunger,
@@ -141,67 +145,26 @@ html::after {
   box-shadow: 0 0 8px rgba(138,43,226,0.8);
 }
 
-/* ---------- Boxes ---------- */
-.box, .card, .content, #main, .container {
-    background: rgba(30,10,45,0.75) !important;
-    border: 1px solid #6a4c93 !important;
-    box-shadow: inset 0 0 15px rgba(138,43,226,0.5) !important;
-    color: #e6e0f0 !important;
-}
-.box h2, .card h2 {
-    color: #dda0dd !important;
-    border-bottom: 2px solid #ba55d3 !important;
-    padding-bottom: 4px !important;
-}
-
-/* ---------- Replace Wolvden Grays ---------- */
-.navbar, .navbar-dark, .breadcrumb {
-  background: rgba(30, 10, 45, 0.9) !important;
-  border-bottom: 1px solid #6a4c93 !important;
-  box-shadow: 0 0 15px rgba(138,43,226,0.5) !important;
-}
-.alert, .header, .subheader {
-  background: rgba(40, 15, 60, 0.85) !important;
-  border: 1px solid #8a2be2 !important;
-  color: #e6e0f0 !important;
-}
-footer, #footer {
-  background: rgba(30, 10, 45, 0.9) !important;
-  border-top: 1px solid #6a4c93 !important;
-  color: #e6e0f0 !important;
-}
-.navbar a, .breadcrumb a, .card a {
-  color: #dda0dd !important;
-}
-.navbar a:hover, .breadcrumb a:hover, .card a:hover {
-  color: #ffffff !important;
-}
-/* Darken cosmic background for better text contrast */
-body::before {
-  background-color: rgba(10, 0, 20, 0.6); /* deep violet overlay */
-  mix-blend-mode: multiply;
-  z-index: -1;
-}
-
-/* Strengthen box opacity */
+/* ---------- Boxes Fully Opaque ---------- */
 .box,
 .card,
-.content,
-.container {
-  background: rgba(25, 5, 40, 0.92) !important;
-  color: #f0eaff !important; /* brighter lavender text */
-}
-
-/* Headings stand out more */
-h1, h2, h3, h4, h5 {
-  color: #ffdbff !important; /* very light pinkish lavender */
-  text-shadow: 0 0 6px rgba(138,43,226,0.6);
-}
-
-/* Sidebar readability */
-#sidebar,
-#sidebar .card {
-  background: rgba(20, 5, 30, 0.95) !important;
+.container,
+.content {
+  background: #1a0a2a !important;
+  border: 1px solid #6a4c93 !important;
+  box-shadow: inset 0 0 15px rgba(138,43,226,0.5) !important;
   color: #f0eaff !important;
 }
+.box h2 {
+  color: #dda0dd !important;
+  border-bottom: 2px solid #ba55d3 !important;
+  padding-bottom: 4px !important;
+}
 
+/* ---------- Headers & Links ---------- */
+h1, h2, h3, h4, h5 {
+  color: #ffdbff !important;
+  text-shadow: 0 0 6px rgba(138,43,226,0.6);
+}
+a { color: #dda0dd !important; }
+a:hover { color: #ffffff !important; }
