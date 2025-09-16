@@ -169,4 +169,26 @@ h1, h2, h3, h4, h5 {
   box-shadow: inset 0 0 15px rgba(138, 43, 226, 0.5) !important;
   color: #f0eaff !important;
 }
+/* Kill any semi-transparent overlays */
+.wrapper::before,
+.wrapper::after,
+.page::before,
+.page::after,
+#main::before,
+#main::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+}
+
+/* Make wrapper itself transparent */
+.wrapper, .page, #main {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 
