@@ -156,4 +156,57 @@ body[style], html body #main[style], html body .page[style], html body .wrapper[
   color: #f0eaff !important;
   padding: 10px;
 }
+/* ---------- Layout Wrapper ---------- */
+.wrapper, .page, .container {
+  max-width: 1200px;        
+  margin: 0 auto !important; 
+  padding: 0 20px;
+}
+
+/* ---------- Sidebar ---------- */
+#sidebar {
+  margin-right: 15px;
+}
+
+#sidebar .box, 
+#sidebar .card {
+  background: rgba(20, 5, 35, 0.95) !important;
+  border: 1px solid #6a4c93 !important;
+  box-shadow: none !important;
+  color: #f0eaff !important;
+  padding: 10px !important;         /* tightened padding */
+  margin-bottom: 10px !important;   /* less space between boxes */
+  border-radius: 6px;
+  height: auto !important;
+  min-height: unset !important;
+}
+
+#sidebar .box h3, 
+#sidebar .card h3 {
+  color: #c8a2ff !important;
+  border-bottom: 1px solid #6a4c93;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+/* ---------- Main Content ---------- */
+#main {
+  margin-left: 15px;
+}
+
+.box, .card, .container, .content, #main {
+  background: rgba(20, 5, 35, 0.95) !important;
+  border: 1px solid #6a4c93 !important;
+  box-shadow: none !important;
+  color: #f0eaff !important;
+  padding: 12px !important;         /* tightened padding */
+  margin-bottom: 15px !important;   /* less gap */
+  border-radius: 6px;
+}
+
+/* ---------- Exclude Chat Box ---------- */
+#chatBox, #chatBox * {
+  all: unset !important;
+}
+
 
