@@ -1,0 +1,52 @@
+/* ---------- General Body ---------- */
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #0a0012 url("https://i.imgur.com/MMpl1zZ.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  color: #e6daff;
+  line-height: 1.6;
+}
+
+/* Subtle mystical glow overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(120, 60, 200, 0.2), transparent 60%),
+              radial-gradient(circle at bottom, rgba(60, 0, 90, 0.3), transparent 70%);
+  pointer-events: none;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: #caa9ff;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #b37fff, 0 0 15px #8a4dff;
+}
+
+/* ---------- Headers ---------- */
+h1, h2, h3, h4, h5, h6 {
+  color: #e9d6ff;
+  text-shadow: 0 0 8px rgba(190, 140, 255, 0.6), 0 0 15px rgba(150, 80, 255, 0.4);
+  font-family: "Georgia", serif;
+}
+
+/* ---------- Content Boxes ---------- */
+.main, .container, .card, .content, .den-page, .den {
+  background: rgba(20, 0, 40, 0.8);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(180, 120, 255, 0.3);
+}
+
+/* ---------- Tables (pack listings etc.) ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  backgro
