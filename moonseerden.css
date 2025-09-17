@@ -8,15 +8,15 @@ body {
   line-height: 1.6;
 }
 
-/* Subtle mystical glow overlay */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(120, 60, 200, 0.2), transparent 60%),
-              radial-gradient(circle at bottom, rgba(60, 0, 90, 0.3), transparent 70%);
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.25;
   pointer-events: none;
 }
+
 
 /* ---------- Links ---------- */
 a {
