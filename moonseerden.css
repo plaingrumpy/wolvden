@@ -36,14 +36,6 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 8px rgba(190, 140, 255, 0.6), 0 0 15px rgba(150, 80, 255, 0.4);
   font-family: "Georgia", serif;
 }
-
-/* ---------- Content Boxes ---------- */
-.main, .container, .card, .content, .den-page, .den {
-  background: rgba(20, 0, 40, 0.8);
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 0 15px rgba(180, 120, 255, 0.3);
-}
 /* ---------- Make wolf boxes wider ---------- */
 .den .card,
 .den .wolf,
