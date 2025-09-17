@@ -59,3 +59,17 @@ table {
   margin: 1rem auto;       /* center the boxes */
   display: block;
 }
+/* Force wolf cards to be wider */
+.den .card,
+.den .wolf,
+.wolfbox {
+  flex: 1 1 100% !important;   /* take up full row */
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* If inside flex rows, make them stack vertically */
+.den .row,
+.den .flex {
+  display: block !important;
+}
