@@ -50,3 +50,12 @@ table {
   width: 100%;
   border-collapse: collapse;
   backgro
+/* ---------- Make wolf boxes wider ---------- */
+.den .card,
+.den .wolf,
+.wolfbox {
+  width: 95% !important;   /* stretch almost full width */
+  max-width: 800px;        /* optional: cap so they don’t get TOO wide */
+  margin: 1rem auto;       /* center the boxes */
+  display: block;
+}
